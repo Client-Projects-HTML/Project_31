@@ -1,0 +1,136 @@
+/* ============================================================
+   ADMIN DARK MODE OVERRIDES
+   admin-core.css hardcodes a lot of light-theme hex colors
+   instead of the --adm-* tokens defined in admin-theme.css, so
+   toggling dark mode barely changed anything (surfaces stayed
+   white, page background stayed cream). This file corrects
+   those hardcoded values for html[data-theme="dark"] without
+   touching the original light-theme rules.
+   Load this AFTER admin-core.css and admin-theme.css.
+   ============================================================ */
+
+/* ---- Bug fix: icon buttons were unreadable in dark mode ---- */
+html[data-theme="dark"] .adm-icon-btn,
+html[data-theme="dark"] .adm-hamburger {
+  color: var(--adm-text);
+}
+
+/* ---- Root page background (main cause of "dark mode does nothing") ---- */
+html[data-theme="dark"] .adm-shell,
+html[data-theme="dark"] .adm-main,
+html[data-theme="dark"] body {
+  background: var(--adm-bg);
+}
+
+/* ---- Card / panel / surface backgrounds ---- */
+html[data-theme="dark"] .adm-field input,
+html[data-theme="dark"] .adm-field select,
+html[data-theme="dark"] .adm-field textarea,
+html[data-theme="dark"] .adm-btn-outline,
+html[data-theme="dark"] .adm-action-btn,
+html[data-theme="dark"] .adm-icon-btn,
+html[data-theme="dark"] .adm-search input,
+html[data-theme="dark"] .adm-stat-card,
+html[data-theme="dark"] .adm-panel,
+html[data-theme="dark"] .adm-chart-card,
+html[data-theme="dark"] .adm-toolbar select,
+html[data-theme="dark"] .adm-table,
+html[data-theme="dark"] .adm-pagination button,
+html[data-theme="dark"] .adm-modal,
+html[data-theme="dark"] .adm-item-card,
+html[data-theme="dark"] .adm-cal-cell,
+html[data-theme="dark"] .adm-form-section,
+html[data-theme="dark"] .adm-upload,
+html[data-theme="dark"] .adm-login-card {
+  background: var(--adm-surface);
+  border-color: var(--adm-border);
+}
+
+html[data-theme="dark"] .adm-btn-ghost,
+html[data-theme="dark"] .adm-upload:hover,
+html[data-theme="dark"] .adm-detail-item,
+html[data-theme="dark"] .adm-table tbody tr:hover,
+html[data-theme="dark"] .adm-cal-cell.today {
+  background: var(--adm-surface-hover);
+}
+
+html[data-theme="dark"] .adm-table tbody tr:nth-child(even) {
+  background: var(--adm-surface-active);
+}
+
+/* ---- Primary text (headings / labels / values on cards) ---- */
+html[data-theme="dark"] .adm-field label,
+html[data-theme="dark"] .adm-upload h3,
+html[data-theme="dark"] .adm-breadcrumb a,
+html[data-theme="dark"] .adm-page-title,
+html[data-theme="dark"] .adm-stat-value,
+html[data-theme="dark"] .adm-revenue,
+html[data-theme="dark"] .adm-panel-head h2,
+html[data-theme="dark"] .adm-table tbody tr:hover td,
+html[data-theme="dark"] .adm-user-avatar,
+html[data-theme="dark"] .adm-price,
+html[data-theme="dark"] .adm-list-title,
+html[data-theme="dark"] .adm-list-avatar,
+html[data-theme="dark"] .adm-item-card .title,
+html[data-theme="dark"] .adm-cal-head h3,
+html[data-theme="dark"] .adm-cal-cell .dnum,
+html[data-theme="dark"] .adm-form-section h3,
+html[data-theme="dark"] .adm-profile-info h2,
+html[data-theme="dark"] .adm-avatar-lg,
+html[data-theme="dark"] .adm-dashboard-title,
+html[data-theme="dark"] h1, html[data-theme="dark"] h2,
+html[data-theme="dark"] h3, html[data-theme="dark"] h4 {
+  color: var(--adm-text);
+}
+
+/* ---- Muted / secondary text ---- */
+html[data-theme="dark"] .adm-upload p,
+html[data-theme="dark"] .adm-btn-ghost,
+html[data-theme="dark"] .adm-breadcrumb,
+html[data-theme="dark"] .adm-search i,
+html[data-theme="dark"] .adm-stat-label,
+html[data-theme="dark"] .adm-panel-head p,
+html[data-theme="dark"] .adm-empty,
+html[data-theme="dark"] .adm-date,
+html[data-theme="dark"] .adm-detail-item label,
+html[data-theme="dark"] .adm-list-sub,
+html[data-theme="dark"] .adm-item-card .meta,
+html[data-theme="dark"] .adm-cal-legend,
+html[data-theme="dark"] .adm-profile-info p,
+html[data-theme="dark"] .adm-dashboard-subtitle,
+html[data-theme="dark"] .adm-table td {
+  color: var(--adm-text-muted);
+}
+
+/* ---- Accent-colored icons/borders (gold works in both themes, just use the token) ---- */
+html[data-theme="dark"] .adm-upload i,
+html[data-theme="dark"] .adm-field textarea:focus,
+html[data-theme="dark"] .adm-field input:focus,
+html[data-theme="dark"] .adm-field select:focus,
+html[data-theme="dark"] .adm-toolbar select:focus {
+  border-color: var(--adm-accent);
+}
+html[data-theme="dark"] .adm-upload i {
+  color: var(--adm-accent);
+}
+
+/* ---- Status badges / toasts: use the dark-aware status tokens ---- */
+html[data-theme="dark"] .adm-badge-ok,
+html[data-theme="dark"] .adm-stat-growth { background: var(--adm-success-bg); color: var(--adm-success); }
+html[data-theme="dark"] .adm-badge-warn { background: var(--adm-warning-bg); color: var(--adm-warning); }
+html[data-theme="dark"] .adm-badge-danger,
+html[data-theme="dark"] .adm-stat-growth.down { background: var(--adm-error-bg); color: var(--adm-error); }
+html[data-theme="dark"] .adm-badge-info { background: var(--adm-info-bg); color: var(--adm-info); }
+html[data-theme="dark"] .adm-badge-muted { background: var(--adm-surface-active); color: var(--adm-text-muted); }
+html[data-theme="dark"] .adm-cal-evt { background: var(--adm-success-bg); color: var(--adm-success); }
+html[data-theme="dark"] .adm-stat-trend { background: var(--adm-success-bg); color: var(--adm-success); }
+
+/* ---- Misc surfaces that used light greys ---- */
+html[data-theme="dark"] .adm-item-card .thumb {
+  background: var(--adm-surface-active);
+}
+
+/* ---- Login page (kept its own card even outside the .adm-shell) ---- */
+html[data-theme="dark"] .adm-login-wrap {
+  background: var(--adm-bg);
+}

@@ -1,0 +1,77 @@
+/* =========================================================
+   RTL SUPPORT — apply by setting <html dir="rtl">
+   ========================================================= */
+
+[dir="rtl"] body{ text-align:right; }
+
+[dir="rtl"] .nav{ flex-direction:row-reverse; }
+[dir="rtl"] .nav-links{ flex-direction:row-reverse; }
+[dir="rtl"] .brand{ flex-direction:row-reverse; }
+[dir="rtl"] .eyebrow::before{ order:2; }
+[dir="rtl"] .hero-grid{ direction:rtl; }
+[dir="rtl"] .hero-visual .arch-badge{ left:auto; right:-26px; }
+[dir="rtl"] .hall-meta,
+[dir="rtl"] .legend span,
+[dir="rtl"] .checkbox-row,
+[dir="rtl"] .footer-brand .social-row,
+[dir="rtl"] .feature-icon,
+[dir="rtl"] .package-card ul li{ flex-direction:row-reverse; }
+[dir="rtl"] .dash-sidebar a{ flex-direction:row-reverse; }
+[dir="rtl"] .invoice-total,
+[dir="rtl"] th,[dir="rtl"] td{ text-align:right; }
+[dir="rtl"] .mobile-panel{ right:auto; left:0; box-shadow:14px 0 40px rgba(0,0,0,.25); transform:translateX(-100%); }
+[dir="rtl"] .mobile-panel.open{ transform:translateX(0); }
+[dir="rtl"] .back-top{ right:auto; left:24px; }
+[dir="rtl"] .newsletter-form{ flex-direction:row-reverse; }
+/* ================================
+   Grand Palace — RTL Support
+   Activated via [dir="rtl"] on <html>, toggled in
+   assets/js/main.js for Arabic / Hebrew layouts.
+================================= */
+
+html[dir="rtl"] .topbar .container { flex-direction: row-reverse; }
+html[dir="rtl"] .topbar span { margin-right: 0; margin-left: 18px; }
+html[dir="rtl"] .topbar i,
+html[dir="rtl"] .logo i,
+html[dir="rtl"] .contact-info-item i,
+html[dir="rtl"] .file-drop i { margin-right: 0; }
+
+html[dir="rtl"] .navbar { flex-direction: row-reverse; }
+html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+html[dir="rtl"] .nav-actions { flex-direction: row-reverse; }
+
+html[dir="rtl"] .dropdown-panel { left: auto; right: 50%; transform: translateX(50%) translateY(6px); text-align: right; }
+html[dir="rtl"] .nav-dropdown:hover .dropdown-panel { transform: translateX(50%) translateY(0); }
+
+html[dir="rtl"] .hero,
+html[dir="rtl"] .page-banner,
+html[dir="rtl"] .section-title,
+html[dir="rtl"] .section-subtitle,
+html[dir="rtl"] .cta-banner { text-align: center; }
+
+html[dir="rtl"] .contact-info-item { flex-direction: row-reverse; text-align: right; }
+html[dir="rtl"] .info-list li { flex-direction: row-reverse; }
+html[dir="rtl"] .form-group label { text-align: right; }
+html[dir="rtl"] .form-group input,
+html[dir="rtl"] .form-group select,
+html[dir="rtl"] .form-group textarea { text-align: right; }
+
+html[dir="rtl"] .footer-grid { text-align: right; }
+html[dir="rtl"] .social-icons { flex-direction: row-reverse; justify-content: flex-end; }
+html[dir="rtl"] .developed-by { flex-direction: row-reverse; }
+
+html[dir="rtl"] #scrollTopBtn { right: auto; left: 26px; }
+html[dir="rtl"] .lightbox-close { right: auto; left: 34px; }
+
+html[dir="rtl"] .faq-question { flex-direction: row-reverse; }
+
+/* Admin */
+html[dir="rtl"] .admin-body { flex-direction: row-reverse; }
+html[dir="rtl"] .admin-nav a { flex-direction: row-reverse; text-align: right; }
+html[dir="rtl"] .admin-topbar { flex-direction: row-reverse; }
+html[dir="rtl"] .admin-table th,
+html[dir="rtl"] .admin-table td { text-align: right; }
+
+@media (max-width: 991px) {
+  html[dir="rtl"] .topbar .container { flex-direction: column; }
+}

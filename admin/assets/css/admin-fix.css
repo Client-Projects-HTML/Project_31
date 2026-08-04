@@ -1,0 +1,120 @@
+/* ============================================================
+   ADMIN FIX SHEET
+   Loaded LAST (after admin-core.css, admin-theme.css,
+   admin-dark-overrides.css). Two jobs:
+   1) Bring every element back down to a normal, professional
+      dashboard scale — admin-core.css shipped with oversized
+      fonts/icons/spacing (60px icons, 34-36px numbers, 32px
+      titles, 82px topbar, 285px sidebar, 34px content padding).
+   2) Patch the one surface admin-dark-overrides.css missed
+      (the topbar keeps a hardcoded near-white background in
+      dark mode) and tighten a couple of low-contrast spots.
+   ============================================================ */
+
+/* ---------------- Global scale ---------------- */
+body{ font-size:14px; }
+
+/* ---------------- Sidebar ---------------- */
+.adm-sidebar{ width:250px; }
+.adm-brand{ padding:22px 18px; gap:12px; }
+.adm-brand-mark{ width:46px; height:46px; font-size:19px; border-radius:14px; }
+.adm-brand-name{ font-size:20px; }
+.adm-brand-name small{ font-size:9px; letter-spacing:1.5px; }
+.adm-nav{ padding:14px 12px; }
+.adm-nav-link{ padding:10px 14px; font-size:13.5px; border-radius:10px; }
+.adm-nav-icon{ width:20px; font-size:15px; }
+
+/* ---------------- Topbar ---------------- */
+.adm-topbar{ height:64px; padding:0 22px; }
+.adm-page-title{ font-size:19px; }
+.adm-page-title span{ font-size:10.5px; }
+.adm-search{ width:260px; }
+.adm-search input{ padding:9px 14px 9px 40px; font-size:13.5px; }
+.adm-icon-btn{ width:38px; height:38px; }
+.adm-avatar{ width:38px; height:38px; font-size:13px; }
+.adm-topbar-link,.adm-view-site{ height:38px; padding:0 14px; font-size:13.5px; }
+.adm-topbar-actions{ gap:12px; }
+.adm-topbar-left{ gap:14px; }
+.adm-topbar-right{ gap:12px; }
+
+/* ---------------- Content area ---------------- */
+.adm-content{ padding:24px; }
+
+/* ---------------- Dashboard header ---------------- */
+.adm-dashboard-title{ font-size:23px !important; }
+.adm-dashboard-subtitle{ font-size:13.5px; }
+.adm-dashboard-header{ margin-bottom:22px; }
+.adm-action-btn,.adm-btn{ padding:10px 16px; font-size:13.5px; border-radius:10px; }
+.adm-btn-sm{ padding:7px 12px; font-size:12.5px; }
+
+/* ---------------- Stat / KPI cards ---------------- */
+.adm-stat-grid{ gap:16px; margin-bottom:22px; }
+.adm-stat-card{ padding:18px; border-radius:16px; }
+.adm-stat-icon{ width:42px; height:42px; font-size:18px; border-radius:12px; }
+.adm-stat-value{ font-size:24px !important; margin-top:14px; }
+.adm-stat-label{ font-size:12px !important; margin-top:4px; }
+.adm-stat-trend{ font-size:11px; padding:4px 10px; }
+.adm-stat-card::after{ width:80px; height:80px; }
+
+/* ---------------- Panels / cards ---------------- */
+.adm-panel{ padding:20px; border-radius:16px; }
+.adm-panel-head h2, .adm-panel-head-luxury h2{ font-size:16px; }
+.adm-chart-card{ border-radius:16px; }
+.adm-item-card{ border-radius:16px; }
+
+/* ---------------- Headings generally ---------------- */
+h1{ font-size:23px; }
+h2{ font-size:18px; }
+h3{ font-size:16px; }
+h4{ font-size:14px; }
+
+/* ---------------- Tables & misc controls ---------------- */
+.adm-table{ font-size:13.5px; }
+.adm-toolbar input, .adm-toolbar select{ height:40px; font-size:13.5px; }
+.adm-avatar-lg{ width:88px; height:88px; font-size:26px; }
+
+/* ---------------- Login card ---------------- */
+.adm-login-brand .adm-mark{ width:48px; height:48px; font-size:19px; }
+.adm-login-brand h1{ font-size:19px; }
+
+/* ============================================================
+   DARK MODE — patch the surface admin-dark-overrides.css missed
+   ============================================================ */
+html[data-theme="dark"] .adm-topbar{
+  background: rgba(29,24,18,.92);
+  border-bottom-color: var(--adm-border);
+}
+html[data-theme="dark"] .adm-topbar-link{
+  background: var(--adm-primary);
+}
+html[data-theme="dark"] .adm-view-site{
+  background: var(--adm-primary);
+  color: var(--adm-text-inverse);
+}
+/* Chart canvases are drawn with fixed light-mode colors in JS,
+   so give them a surface to sit on that still reads correctly */
+html[data-theme="dark"] #revChart,
+html[data-theme="dark"] #statusDonut{
+  background: transparent;
+}
+html[data-theme="dark"] .adm-brand-name{ color:#fff; }
+html[data-theme="dark"] .adm-search i{ color: var(--adm-text-muted); }
+
+/* ============================================================
+   RESPONSIVE — align breakpoints with the smaller scale above
+   ============================================================ */
+@media screen and (max-width: 768px){
+  .adm-topbar{ height:auto; }
+  .adm-page-title{ font-size:17px; }
+  .adm-search{ display:none; }
+  .adm-dashboard-title{ font-size:19px !important; }
+  .adm-stat-value{ font-size:20px !important; }
+  .adm-content{ padding:16px; }
+}
+
+@media screen and (max-width: 480px){
+  .adm-brand-name{ font-size:17px; }
+  .adm-dashboard-actions{ width:100%; }
+  .adm-dashboard-actions .adm-btn{ flex:1; text-align:center; }
+  .adm-stat-icon{ width:36px; height:36px; font-size:16px; }
+}

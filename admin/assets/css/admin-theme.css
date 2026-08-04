@@ -1,0 +1,211 @@
+/* ==========================================================
+   ADMIN THEME CSS
+   System Design Tokens: Colors, Typography, Spacing, & Themes
+========================================================== */
+
+/* ----------------------------------------------------------
+   1. LIGHT THEME (DEFAULT)
+---------------------------------------------------------- */
+:root {
+  /* Brand Colors */
+  --adm-primary: #1e4d3d;
+  --adm-primary-hover: #163a2e;
+  --adm-primary-active: #0e271f;
+  --adm-accent: #c9a227;
+  --adm-accent-hover: #b08d20;
+
+  /* Neutral Backgrounds */
+  --adm-bg: #faf6ee;
+  --adm-surface: #ffffff;
+  --adm-surface-hover: #f4efe4;
+  --adm-surface-active: #e8e0d0;
+
+  /* Typography Colors */
+  --adm-text: #211f1a;
+  --adm-text-muted: #83795f;
+  --adm-text-inverse: #ffffff;
+
+  /* Borders & Dividers */
+  --adm-border: #e4d9bd;
+  --adm-border-subtle: #f0e8d6;
+
+  /* Status & Feedback Colors */
+  --adm-success: #2e7d32;
+  --adm-success-bg: #e8f5e9;
+  --adm-warning: #ed6c02;
+  --adm-warning-bg: #fff4e5;
+  --adm-error: #d32f2f;
+  --adm-error-bg: #fdeded;
+  --adm-info: #0288d1;
+  --adm-info-bg: #e5f6fd;
+
+  /* Typography Families */
+  --adm-font-display: 'Cormorant Garamond', Georgia, serif;
+  --adm-font-body: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --adm-font-mono: 'JetBrains Mono', Fira Code, Consolas, Monaco, monospace;
+
+  /* Font Sizes */
+  --adm-fs-xs: 0.75rem;     /* 12px */
+  --adm-fs-sm: 0.875rem;    /* 14px */
+  --adm-fs-base: 1rem;      /* 16px */
+  --adm-fs-lg: 1.125rem;    /* 18px */
+  --adm-fs-xl: 1.25rem;     /* 20px */
+  --adm-fs-2xl: 1.5rem;     /* 24px */
+  --adm-fs-3xl: 1.875rem;   /* 30px */
+
+  /* Line Heights */
+  --adm-lh-tight: 1.2;
+  --adm-lh-normal: 1.5;
+  --adm-lh-relaxed: 1.75;
+
+  /* Layout Spacing */
+  --adm-space-2xs: 0.25rem;  /* 4px */
+  --adm-space-xs: 0.5rem;    /* 8px */
+  --adm-space-sm: 0.75rem;   /* 12px */
+  --adm-space-md: 1rem;      /* 16px */
+  --adm-space-lg: 1.5rem;    /* 24px */
+  --adm-space-xl: 2rem;      /* 32px */
+  --adm-space-2xl: 3rem;     /* 48px */
+
+  /* Border Radii */
+  --adm-radius-sm: 0.25rem;  /* 4px */
+  --adm-radius-md: 0.5rem;   /* 8px */
+  --adm-radius-lg: 0.75rem;  /* 12px */
+  --adm-radius-xl: 1rem;     /* 16px */
+  --adm-radius-full: 9999px;
+
+  /* Shadows */
+  --adm-shadow-sm: 0 1px 2px 0 rgba(33, 31, 26, 0.05);
+  --adm-shadow-md: 0 4px 6px -1px rgba(33, 31, 26, 0.08), 0 2px 4px -1px rgba(33, 31, 26, 0.04);
+  --adm-shadow-lg: 0 10px 15px -3px rgba(33, 31, 26, 0.1), 0 4px 6px -2px rgba(33, 31, 26, 0.05);
+
+  /* Transitions */
+  --adm-transition-fast: 0.15s ease;
+  --adm-transition-normal: 0.25s ease;
+  --adm-transition-slow: 0.4s ease;
+
+  /* Z-Index Hierarchy */
+  --adm-z-dropdown: 1000;
+  --adm-z-sticky: 1020;
+  --adm-z-fixed: 1030;
+  --adm-z-modal-backdrop: 1040;
+  --adm-z-modal: 1050;
+  --adm-z-popover: 1060;
+  --adm-z-tooltip: 1070;
+}
+
+/* ----------------------------------------------------------
+   2. DARK THEME OVERRIDES
+   Supports both [data-theme="dark"] attribute and .dark class
+---------------------------------------------------------- */
+html[data-theme="dark"],
+body.dark {
+  /* Brand Colors */
+  --adm-primary: #2f6e57;
+  --adm-primary-hover: #3b886c;
+  --adm-primary-active: #47a281;
+  --adm-accent: #d9b53c;
+  --adm-accent-hover: #e3c457;
+
+  /* Neutral Backgrounds */
+  --adm-bg: #14100c;
+  --adm-surface: #1d1812;
+  --adm-surface-hover: #29231b;
+  --adm-surface-active: #362e24;
+
+  /* Typography Colors */
+  --adm-text: #f3ede1;
+  --adm-text-muted: #a89a78;
+  --adm-text-inverse: #14100c;
+
+  /* Borders & Dividers */
+  --adm-border: #3a3020;
+  --adm-border-subtle: #2b2318;
+
+  /* Status & Feedback Backgrounds (Adjusted for dark mode contrast) */
+  --adm-success: #66bb6a;
+  --adm-success-bg: #1b2e1e;
+  --adm-warning: #ffa726;
+  --adm-warning-bg: #332410;
+  --adm-error: #f44336;
+  --adm-error-bg: #331919;
+  --adm-info: #29b6f6;
+  --adm-info-bg: #0f2936;
+
+  /* Shadows for dark mode */
+  --adm-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --adm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --adm-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Automatic Dark Mode based on OS preference (if theme isn't explicitly set) */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --adm-primary: #2f6e57;
+    --adm-primary-hover: #3b886c;
+    --adm-primary-active: #47a281;
+    --adm-accent: #d9b53c;
+    --adm-accent-hover: #e3c457;
+
+    --adm-bg: #14100c;
+    --adm-surface: #1d1812;
+    --adm-surface-hover: #29231b;
+    --adm-surface-active: #362e24;
+
+    --adm-text: #f3ede1;
+    --adm-text-muted: #a89a78;
+    --adm-text-inverse: #14100c;
+
+    --adm-border: #3a3020;
+    --adm-border-subtle: #2b2318;
+
+    --adm-success: #66bb6a;
+    --adm-success-bg: #1b2e1e;
+    --adm-warning: #ffa726;
+    --adm-warning-bg: #332410;
+    --adm-error: #f44336;
+    --adm-error-bg: #331919;
+    --adm-info: #29b6f6;
+    --adm-info-bg: #0f2936;
+
+    --adm-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    --adm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --adm-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ----------------------------------------------------------
+   3. BASE DOCUMENT RESET USING THEME TOKENS
+---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--adm-bg);
+  color: var(--adm-text);
+  font-family: var(--adm-font-body);
+  font-size: var(--adm-fs-base);
+  line-height: var(--adm-lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--adm-transition-normal), color var(--adm-transition-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--adm-font-display);
+  font-weight: 600;
+  line-height: var(--adm-lh-tight);
+  color: #17392D;
+  margin-top: 0;
+}
+
+code, pre, kbd {
+  font-family: var(--adm-font-mono);
+}

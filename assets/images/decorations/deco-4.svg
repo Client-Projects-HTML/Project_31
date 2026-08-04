@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#241119"/>
+<stop offset="100%" stop-color="#2E6B58"/>
+</linearGradient>
+<pattern id="jali" width="26" height="26" patternUnits="userSpaceOnUse">
+<circle cx="13" cy="13" r="1.6" fill="#E0A63A" opacity="0.35"/>
+</pattern>
+</defs>
+<rect width="800" height="600" fill="url(#g)"/>
+<rect width="800" height="600" fill="url(#jali)"/>
+<text x="50%" y="48%" font-family="Georgia, serif" font-size="54" fill="#F3E7CE" text-anchor="middle" opacity="0.9">Luxury Decoration</text>
+<text x="50%" y="58%" font-family="Georgia, serif" font-size="27" fill="#E0A63A" text-anchor="middle" letter-spacing="2">DECOR STUDIO</text>
+</svg>

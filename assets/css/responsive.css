@@ -1,0 +1,216 @@
+/* =========================================================
+   RESPONSIVE — Grand Palace
+   Breakpoints: 1200 / 1100 (nav) / 900 / 720 / 480 / 380
+   ========================================================= */
+
+/* Global safety net: nothing should ever force horizontal scroll */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Any plain (unclassed) data table gets horizontal scroll instead of
+   getting crushed/overflowing on narrow screens */
+@media (max-width: 720px) {
+  table:not(.invoice-table) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid-4 { grid-template-columns: repeat(3, 1fr); }
+  .dash-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width:1100px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+    .mobile-panel{
+        display:block;
+    }
+
+    .nav-actions{
+        gap:10px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-visual{
+        order:-1;
+    }
+
+    .grid-4{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid-3{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .auth-wrap{
+        grid-template-columns:1fr;
+    }
+
+    .auth-visual{
+        display:none;
+    }
+
+    .dash-shell{
+        grid-template-columns:1fr;
+    }
+
+    .dash-sidebar{
+        display:flex;
+        overflow-x:auto;
+        gap:8px;
+    }
+
+}
+
+@media (max-width: 900px) {
+  .section { padding: 56px 0; }
+  .invoice-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .calendar { padding: 20px; }
+  .calendar-grid { gap: 5px; }
+  .day-cell { font-size: 0.82rem; }
+  .filter-bar { gap: 8px; }
+  .filter-bar button { padding: 8px 16px; font-size: 0.85rem; }
+  .feature-card { padding: 26px 16px; }
+  .testimonial-card p { font-size: 1.15rem; }
+  .stat-card { padding: 20px; }
+}
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width:720px){
+
+    .container{
+        padding:0 18px;
+    }
+
+    .nav{
+
+        min-height:68px;
+
+    }
+
+    .brand-name{
+
+        font-size:1.05rem;
+
+    }
+
+    .icon-btn{
+
+        width:38px;
+        height:38px;
+
+    }
+
+    .btn.btn-ghost.btn-sm{
+
+        display:none;
+
+    }
+
+    .hero-grid,
+    .grid-2,
+    .grid-3,
+    .grid-4{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-actions{
+
+        flex-direction:column;
+
+    }
+
+    .hero-actions .btn{
+
+        width:100%;
+
+    }
+
+    .hero-stats{
+
+        flex-wrap:wrap;
+
+    }
+
+    .mobile-panel{
+
+        width:280px;
+
+    }
+
+}
+@media (max-width:480px){
+
+    .mobile-panel{
+
+        width:100%;
+        max-width:100%;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .section{
+
+        padding:48px 0;
+
+    }
+
+}
+
+@media (max-width: 380px) {
+  .hero-stats { flex-direction: column; gap: 12px; }
+  .filter-bar button { padding: 7px 12px; font-size: 0.8rem; }
+  .package-card { padding: 26px 18px; }
+  .calendar-grid { gap: 2px; }
+  .day-cell { font-size: 0.68rem; padding: 5px 1px; }
+}
+
+/* Touch target safety net */
+@media (hover: none) and (pointer: coarse) {
+  .btn, .nav-links a, .icon-btn, .hamburger, .filter-bar button, .mobile-panel a {
+    min-height: 44px;
+  }
+}
