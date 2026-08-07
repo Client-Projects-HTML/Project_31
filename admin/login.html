@@ -1,208 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Grand Palace | Admin Login</title>
-
-    <link rel="icon" href="data:,">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- Existing CSS -->
-    <link rel="stylesheet" href="assets/css/admin-core.css">
-    <link rel="stylesheet" href="assets/css/admin-theme.css">
-<link rel="stylesheet" href="assets/css/admin-dark-overrides.css">
-<link rel="stylesheet" href="assets/css/admin-fix.css">
-</head>
-
-<body data-page="login">
-
-<div class="adm-login-wrap">
-
-    <div class="adm-login-card">
-
-        <div class="adm-login-brand">
-
-            <div class="adm-mark">
-                <i class="fa-solid fa-user-shield"></i>
-            </div>
-
-            <h1>Grand Palace</h1>
-
-            <h2>Welcome Back</h2>
-
-            <p>
-                Sign in to manage bookings,
-                halls, packages, customers,
-                enquiries and reports.
-            </p>
-
-        </div>
-
-        <div
-            class="adm-login-error"
-            id="loginError">
-        </div>
-
-        <form id="loginForm">
-
-            <div class="adm-field">
-
-                <label>Email Address</label>
-
-                <div class="adm-input-group">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    <input
-                        id="loginEmail"
-                        type="email"
-                        placeholder="admin@grandpalace.com"
-                        required>
-
-                </div>
-
-            </div>
-
-            <div class="adm-field">
-
-                <label>Password</label>
-
-                <div class="adm-input-group">
-
-                    <i class="fa-solid fa-lock"></i>
-
-                    <input
-                        id="loginPassword"
-                        type="password"
-                        placeholder="Enter Password"
-                        required>
-
-                    <i
-                        class="fa-solid fa-eye adm-toggle-password"
-                        id="togglePassword">
-                    </i>
-
-                </div>
-
-            </div>
-
-            <div class="adm-check-row">
-
-                <label>
-
-                    <input
-                        id="loginRemember"
-                        type="checkbox">
-
-                    Remember Me
-
-                </label>
-
-                <a href="#">
-
-                    Forgot Password?
-
-                </a>
-
-            </div>
-
-            <button
-                type="submit"
-                class="adm-btn adm-btn-primary adm-btn-block">
-
-                <i class="fa-solid fa-right-to-bracket"></i>
-
-                Login to Dashboard
-
-            </button>
-                    </form>
-
-        <div class="adm-login-extra">
-
-            <button
-                type="button"
-                id="loginDemoBtn"
-                class="adm-btn adm-btn-outline adm-btn-block">
-
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-                Autofill Demo Login
-
-            </button>
-
-            <a
-                href="../pages/index.html"
-                class="adm-back-home">
-
-                <i class="fa-solid fa-arrow-left"></i>
-
-                Back to Website
-
-            </a>
-
-        </div>
-
-        <div class="adm-login-footer">
-
-            <p>
-
-                © 2026 Grand Palace Banquet Hall
-
-            </p>
-
-            <span>
-
-                Secure Admin Management Portal
-
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="assets/js/admin-data.js"></script>
-<script src="assets/js/admin-core.js"></script>
-<script src="assets/js/admin-app.js"></script>
-
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=../pages/login.html?role=admin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting… | Grand Palace Admin</title>
+<link rel="icon" href="data:,">
+<!--
+  Host Login and Admin Login now live on a single page
+  (pages/login.html), per project requirements — there is no
+  separate admin login screen anymore. This file is kept only as
+  a redirect stub so any old bookmarks/links to admin/login.html
+  still land somewhere useful, with the Admin tab pre-selected.
+-->
 <script>
-
-const togglePassword = document.getElementById("togglePassword");
-
-const password = document.getElementById("loginPassword");
-
-togglePassword.addEventListener("click",function(){
-
-    if(password.type==="password"){
-
-        password.type="text";
-
-        this.classList.remove("fa-eye");
-
-        this.classList.add("fa-eye-slash");
-
-    }
-
-    else{
-
-        password.type="password";
-
-        this.classList.remove("fa-eye-slash");
-
-        this.classList.add("fa-eye");
-
-    }
-
-});
-
+window.location.replace("../pages/login.html?role=admin");
 </script>
-
+<style>
+  html,body{height:100%;margin:0;background:#0F2E24;color:#fff;font-family:Georgia,'Times New Roman',serif;}
+  .redirect-note{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
+  .redirect-note a{color:#D4AF37;}
+</style>
+</head>
+<body>
+  <p class="redirect-note">Redirecting to the login page… if you are not redirected automatically,
+    <a href="../pages/login.html?role=admin">click here</a>.</p>
 </body>
 </html>

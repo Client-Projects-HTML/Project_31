@@ -32,7 +32,7 @@
     const page = d.body.getAttribute("data-page");
     if (page === "login") return;
     if (!isAuthed()) {
-      window.location.href = "login.html";
+      window.location.href = "../pages/login.html?role=admin";
     }
   }
   function login(remember) {
@@ -43,7 +43,7 @@
   function logout() {
     sessionStorage.removeItem(LS_SESSION);
     localStorage.removeItem(LS_SESSION);
-    window.location.href = "login.html";
+    window.location.href = "../pages/login.html?role=admin";
   }
 
   /* ---------------- Storage helpers ---------------- */
@@ -472,8 +472,9 @@ id="admContent">
     const max = Math.max(...opts.data, 1) * 1.15;
     const styles = getComputedStyle(d.body);
     const color = opts.color || styles.getPropertyValue("--adm-accent") || "#c9a227";
-    const grid = "rgba(0,0,0,0.08)";
-    const txt = "rgba(0,0,0,0.55)";
+    const isDark = d.documentElement.getAttribute("data-theme") === "dark";
+    const grid = isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)";
+    const txt = isDark ? "rgba(255,255,255,0.68)" : "rgba(0,0,0,0.55)";
 
     // gridlines
     ctx.strokeStyle = grid; ctx.lineWidth = 1; ctx.font = "11px var(--adm-font-body, sans-serif)"; ctx.fillStyle = txt;

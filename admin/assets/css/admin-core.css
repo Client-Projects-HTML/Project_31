@@ -23,7 +23,14 @@ input, select, textarea { font-family: inherit; font-size: 14px; }
     display:flex;
     align-items:center;
     justify-content:center;
-    background:transparent;
+    background:
+        linear-gradient(
+            135deg,
+            #0F2E24 0%,
+            #12392C 35%,
+            #173F31 70%,
+            #0B1F18 100%
+        );
     padding:20px;
 }
 .adm-login-card {
@@ -302,8 +309,9 @@ html[dir="rtl"] .adm-nav-link:hover {
     background:
         linear-gradient(
             135deg,
-            #D4AF37,
-            #C59622
+            #D4AF37 0%,
+            #C7A14D 55%,
+            #AA8536 100%
         );
 
     color:#17392D;
@@ -403,23 +411,26 @@ html[dir="rtl"] .adm-nav-link:hover {
 
 .adm-shell{
     display:flex;
-    min-height:100vh;
+    align-items:stretch;
+    height:100vh;
+    overflow:hidden;
     background:#f8f6f1;
 }
 
 /* ================= Sidebar ================= */
+/* No fixed height / sticky trick needed: the sidebar is a flex
+   sibling of .adm-main inside a 100vh shell, so it is always
+   exactly as tall as the page. Only .adm-content scrolls. */
 
 .adm-sidebar{
 
     width:285px;
     flex-shrink:0;
 
-    position:sticky;
-    top:0;
-
-    height:100vh;
+    height:100%;
 
     overflow-y:auto;
+    overflow-x:hidden;
 
     background:
         linear-gradient(
@@ -471,8 +482,9 @@ html[dir="rtl"] .adm-nav-link:hover {
     background:
         linear-gradient(
             135deg,
-            #D4AF37,
-            #C59622
+            #D4AF37 0%,
+            #C7A14D 55%,
+            #AA8536 100%
         );
 
     color:#0F2E24;
@@ -487,6 +499,43 @@ html[dir="rtl"] .adm-nav-link:hover {
 
 }
 
+.adm-brand-text{
+
+    display:flex;
+    flex-direction:column;
+
+    font-family:var(--adm-font-display);
+
+    line-height:1.1;
+
+}
+
+.adm-brand-text h2{
+
+    margin:0;
+
+    font-size:26px;
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.adm-brand-text p{
+
+    margin:5px 0 0;
+
+    color:rgba(255,255,255,.68);
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/* Keep the old class name working too, in case it's reused elsewhere */
 .adm-brand-name{
 
     display:flex;
@@ -647,8 +696,10 @@ html[dir="rtl"] .adm-nav-link:hover {
 .adm-main{
     flex:1;
     min-width:0;
+    height:100%;
     display:flex;
     flex-direction:column;
+    overflow:hidden;
     background:#F8F6F1;
 }
 
@@ -660,6 +711,7 @@ html[dir="rtl"] .adm-nav-link:hover {
     top:0;
     z-index:100;
 
+    flex-shrink:0;
     height:82px;
 
     display:flex;
@@ -1027,6 +1079,8 @@ html[dir="rtl"] .adm-nav-link:hover {
 
     flex:1;
 
+    overflow-y:auto;
+
     padding:34px;
 
 }
@@ -1177,9 +1231,9 @@ html[dir="rtl"] .adm-nav-link:hover {
 
 .adm-stat-icon{
 
-    width:60px;
+    width:42px;
 
-    height:60px;
+    height:42px;
 
     border-radius:18px;
 
@@ -1217,7 +1271,7 @@ html[dir="rtl"] .adm-nav-link:hover {
 
     margin-top:22px;
 
-    font-size:36px;
+    font-size:20px;
 
     font-family:var(--adm-font-display);
 
@@ -2540,8 +2594,8 @@ border-top:1px solid #F1F1F1;
 }
 
 .adm-stat-icon{
-    width:60px;
-    height:60px;
+    width:42px;
+    height:42px;
     border-radius:16px;
     display:flex;
     align-items:center;
@@ -2560,7 +2614,7 @@ border-top:1px solid #F1F1F1;
 }
 
 .adm-stat-value{
-    font-size:34px;
+    font-size:22px;
     font-weight:700;
     margin-top:12px;
     color:#123524;
@@ -2592,7 +2646,7 @@ border-top:1px solid #F1F1F1;
 
 .adm-dashboard-title{
 
-    font-size:32px;
+    font-size:24px;
 
     font-weight:700;
 
@@ -3002,7 +3056,7 @@ html, body {
   }
 
   .adm-stat-value {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
   /* Secondary metadata hidden on tight viewports */

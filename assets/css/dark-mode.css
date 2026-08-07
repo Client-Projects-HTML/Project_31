@@ -4,7 +4,7 @@
    This file covers component-level exceptions.
    ========================================================= */
 
-[data-theme="dark"] .arch-frame{ border-color:rgba(224,166,58,.35); }
+[data-theme="dark"] .arch-frame{ border-color:rgba(212,175,55,.35); }
 [data-theme="dark"] .hall-card,
 [data-theme="dark"] .package-card,
 [data-theme="dark"] .form-panel,
@@ -12,18 +12,18 @@
 [data-theme="dark"] table,
 [data-theme="dark"] .invoice-box,
 [data-theme="dark"] .calendar{
-  background:#241119;
+  background:#16241D;
   box-shadow:none;
 }
-[data-theme="dark"] th{ background:#1C0D14; }
+[data-theme="dark"] th{ background:#0F1F18; }
 [data-theme="dark"] .field input,
 [data-theme="dark"] .field select,
 [data-theme="dark"] .field textarea{
-  background:#1C0D14; color:var(--ink); border-color:var(--line);
+  background:#0F1F18; color:var(--ink); border-color:var(--line);
 }
-[data-theme="dark"] .filter-bar button{ background:#241119; }
+[data-theme="dark"] .filter-bar button{ background:#16241D; }
 [data-theme="dark"] .skeleton{
-  background:linear-gradient(90deg,#241119 25%, #33161f 37%, #241119 63%);
+  background:linear-gradient(90deg,#16241D 25%, #23362C 37%, #16241D 63%);
   background-size:400% 100%;
 }
 [data-theme="dark"] .icon-btn .sun{ display:block; }

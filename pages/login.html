@@ -72,8 +72,8 @@
     <div class="auth-box">
       <!-- Role Switcher -->
       <div class="role-switch">
-        <button id="userRoleBtn" class="role-btn active" onclick="switchRole('user')">Host Login</button>
-        <a id="adminRoleBtn" class="role-btn" href="../admin/login.html">Admin Portal</a>
+        <button id="userRoleBtn" class="role-btn active" onclick="switchRole('user')" type="button">Host Login</button>
+        <button id="adminRoleBtn" class="role-btn" onclick="switchRole('admin')" type="button">Admin Login</button>
       </div>
 
       <span class="eyebrow" id="authEyebrow">Customer Login</span>
@@ -83,24 +83,49 @@
       <div class="form-success testimonial-card" style="display:none; margin-bottom:20px; padding:20px;">
         <p style="font-size:.95rem;">✦ Logged in successfully — redirecting to your dashboard.</p>
       </div>
-      <form id="loginForm" data-validate novalidate action="dashboard.html" method="POST">
-        <div class="field">
-          <label for="l-email">Email</label>
-          <input type="email" id="l-email" data-required placeholder="you@example.com">
-          <span class="error">Please enter a valid email.</span>
-        </div>
-        <div class="field">
-          <label for="l-password">Password</label>
-          <input type="password" id="l-password" data-required placeholder="••••••••">
-          <span class="error">Password must be at least 6 characters.</span>
-        </div>
-        <div class="checkbox-row" style="margin-bottom:22px; justify-content:space-between;">
-          <label class="checkbox-row"><input type="checkbox"> Remember me</label>
-          <a href="forgot-password.html" class="small">Forgot password?</a>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Login</button>
-        <p class="form-note" id="registerLink">New here? <a href="register.html" style="color:var(--marigold);">Register</a></p>
-      </form>
+
+      <!-- Host / customer login -->
+      <div id="hostLoginPanel">
+        <form id="loginForm" data-validate novalidate action="dashboard.html" method="POST">
+          <div class="field">
+            <label for="l-email">Email</label>
+            <input type="email" id="l-email" data-required placeholder="you@example.com">
+            <span class="error">Please enter a valid email.</span>
+          </div>
+          <div class="field">
+            <label for="l-password">Password</label>
+            <input type="password" id="l-password" data-required placeholder="••••••••">
+            <span class="error">Password must be at least 6 characters.</span>
+          </div>
+          <div class="checkbox-row" style="margin-bottom:22px; justify-content:space-between;">
+            <label class="checkbox-row"><input type="checkbox"> Remember me</label>
+            <a href="forgot-password.html" class="small">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Login</button>
+          <p class="form-note" id="registerLink">New here? <a href="register.html" style="color:var(--marigold);">Register</a></p>
+        </form>
+      </div>
+
+      <!-- Admin login: submits straight to the admin dashboard, no second login page -->
+      <div id="adminLoginPanel" style="display:none;">
+        <form id="adminLoginForm" data-validate novalidate>
+          <div class="field">
+            <label for="a-email">Admin Email</label>
+            <input type="email" id="a-email" data-required placeholder="admin@grandpalacebanquets.in">
+            <span class="error">Please enter a valid email.</span>
+          </div>
+          <div class="field">
+            <label for="a-password">Password</label>
+            <input type="password" id="a-password" data-required placeholder="••••••••">
+            <span class="error">Password must be at least 6 characters.</span>
+          </div>
+          <div class="checkbox-row" style="margin-bottom:22px; justify-content:space-between;">
+            <label class="checkbox-row"><input type="checkbox" id="a-remember" checked> Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="adminSubmitBtn">Go to Admin Dashboard</button>
+          <p class="form-note">Demo access — any email &amp; password (6+ characters) signs you straight in.</p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -126,8 +151,8 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="halls.html">Our Halls</a></li>
-          <li><a href="packages.html">Packages</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="coming-soon.html">Offers</a></li>
+          <li><a href="404.html">New Halls</a></li>
           <li><a href="testimonials.html">Testimonials</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
@@ -160,13 +185,22 @@
 <button class="back-top" aria-label="Back to top">↑</button>
 
 <script>
-// This form is for customer (Host) logins only. Admin Portal is now a
-// direct link to the real admin login (../admin/login.html) — no second
-// fake login step in between.
+// Host (customer) and Admin login now live on one page. Switching tabs
+// just swaps which panel/copy is shown — nothing navigates away.
 function switchRole(role) {
-  // Kept only for the active-tab styling; admin now navigates away via
-  // its own <a href> instead of calling this function.
-  document.getElementById('userRoleBtn').classList.toggle('active', role === 'user');
+  const isAdmin = role === 'admin';
+
+  document.getElementById('userRoleBtn').classList.toggle('active', !isAdmin);
+  document.getElementById('adminRoleBtn').classList.toggle('active', isAdmin);
+
+  document.getElementById('hostLoginPanel').style.display = isAdmin ? 'none' : 'block';
+  document.getElementById('adminLoginPanel').style.display = isAdmin ? 'block' : 'none';
+
+  document.getElementById('authEyebrow').textContent = isAdmin ? 'Admin Login' : 'Customer Login';
+  document.getElementById('authTitle').textContent = isAdmin ? 'Welcome back, Admin' : 'Welcome back';
+  document.getElementById('authSub').textContent = isAdmin
+    ? 'Sign in to manage bookings, halls and site content.'
+    : 'Manage your venue bookings and event preferences.';
 }
 
 // Handle Form Submission explicitly to guarantee redirection
@@ -181,6 +215,46 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   setTimeout(() => {
     window.location.href = 'dashboard.html';
   }, 1000);
+});
+
+// Pre-select the Admin tab if we arrived here via ?role=admin
+// (e.g. someone bookmarked the old admin/login.html page).
+(function preselectRole() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('role') === 'admin') {
+    switchRole('admin');
+  }
+})();
+
+// Admin login: sets the same session flag the admin panel itself uses
+// (see admin/assets/js/admin-core.js -> Adm.login) and jumps straight
+// to the dashboard — no separate admin/login.html step.
+document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById('a-email').value.trim();
+  const password = document.getElementById('a-password').value;
+  if (!email || password.length < 6) {
+    return; // let the built-in field validation styling (data-validate) handle it
+  }
+
+  const remember = document.getElementById('a-remember').checked;
+  const SESSION_KEY = 'gpAdmin_session';
+  if (remember) {
+    localStorage.setItem(SESSION_KEY, '1');
+  } else {
+    sessionStorage.setItem(SESSION_KEY, '1');
+  }
+  localStorage.setItem('gpAdmin_lastLogin', new Date().toISOString());
+
+  const successBox = document.querySelector('.form-success');
+  if (successBox) {
+    successBox.style.display = 'block';
+  }
+
+  setTimeout(() => {
+    window.location.href = '../admin/dashboard.html';
+  }, 600);
 });
 </script>
 <script src="../assets/js/main.js"></script>
