@@ -10,72 +10,59 @@
 <link rel="stylesheet" href="../assets/css/responsive.css">
 <link rel="stylesheet" href="../assets/css/dark-mode.css">
 <link rel="stylesheet" href="../assets/css/rtl.css">
+<script>
+  (function(){
+    var t = localStorage.getItem('gp-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    var r = localStorage.getItem('gp-rtl');
+    if (r === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+  })();
+</script>
 </head>
 <body>
 <header class="site-header">
-  <nav class="nav container">
-    <a href="index.html" class="brand">
+  <div class="container nav">
+    <a href="../index.html" class="brand">
       <img src="../assets/images/icons/logo.svg" alt="Grand Palace crest" class="brand-mark">
-      <span class="brand-name">Grand <span>Palace</span></span>
+      <span class="brand-name">Grand Palace</span>
     </a>
-    <ul class="nav-links">
-      <li class="nav-dropdown">
-        <a href="index.html" class="dropdown-trigger">Home <small>▾</small></a>
-        <div class="dropdown-panel">
-          <a href="index.html">Home — Classic</a>
-          <a href="home-2.html">Home — Premium</a>
-        </div>
-      </li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="booking.html">Book Now</a></li>
-      <li><a href="halls.html">Halls</a></li>
-      <li><a href="packages.html">Packages</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
     <div class="nav-actions">
-      <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
-      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">
-        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
-        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <button class="icon-btn" data-rtl-toggle aria-label="Toggle RTL layout" title="Toggle RTL">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/></svg>
-      </button>
-      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="icon-btn" data-theme-toggle title="Toggle Dark/Light Mode">🌙</button>
+      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode">🌐</button>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+  </div>
 </header>
 <div class="mobile-overlay"></div>
 <div class="mobile-panel">
-  <a href="index.html">Home — Classic</a>
-  <a href="home-2.html">Home — Premium</a>
+  <div class="mobile-panel-brand" style="display:flex; align-items:center; gap:10px; padding-bottom:16px; margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,.15);">
+    <img src="../assets/images/icons/logo.svg" alt="Grand Palace crest" style="width:30px; height:30px;">
+    <span style="font-family:var(--font-display); font-size:1.15rem; color:var(--marigold-lt); font-weight:700;">Grand Palace</span>
+  </div>
+
+  <div class="mobile-dropdown">
+    <button type="button" class="mobile-dropdown-trigger" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:14px 0; color:#fff; font-size:15px; background:none; border:none; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; cursor:pointer;">
+      <span>Home</span>
+      <span class="chevron-icon" style="transition:transform .3s ease; color:var(--marigold); font-size:14px;">▾</span>
+    </button>
+    <div class="mobile-dropdown-menu" style="display:none; padding-left:14px; background:rgba(0,0,0,.15); border-radius:6px; margin:6px 0;">
+      <a href="index.html" style="padding:10px 0; font-size:14px; color:rgba(255,255,255,.85);">Home — Classic</a>
+      <a href="home-2.html" style="padding:10px 0; font-size:14px; color:rgba(255,255,255,.85); border-bottom:none;">Home — Premium</a>
+    </div>
+  </div>
+
   <a href="about.html">About</a>
   <a href="booking.html">Book Now</a>
-  <a href="halls.html">Halls</a>
-  <a href="packages.html">Packages</a>
+  <a href="services.html">Services</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
-  <a href="login.html">Login</a>
-  <a href="register.html">Register</a>
+  <a href="login.html" class="mobile-login-btn active" style="margin-top:20px; display:block; text-align:center; background:var(--marigold); color:var(--wine-dk) !important; font-weight:700; border-radius:999px; padding:12px 20px; border-bottom:none;">Login</a>
 </div>
 
 <main>
 <section class="auth-wrap">
-  <div class="auth-visual" style="position: relative; overflow: hidden;">
-    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" alt="Grand Palace evening banquet hall interior" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-    <div class="auth-quote">
-      <p>"Every celebration deserves a palace for a night."</p>
-    </div>
-  </div>
   <div class="auth-form-wrap">
     <div class="auth-box">
-      <!-- Role Switcher -->
-      <div class="role-switch">
-        <button id="userRoleBtn" class="role-btn active" onclick="switchRole('user')" type="button">Host Login</button>
-        <button id="adminRoleBtn" class="role-btn" onclick="switchRole('admin')" type="button">Admin Login</button>
-      </div>
-
       <span class="eyebrow" id="authEyebrow">Customer Login</span>
       <h2 id="authTitle">Welcome back</h2>
       <p class="small" id="authSub" style="color:var(--ink-soft); margin-bottom: 20px;">Manage your venue bookings and event preferences.</p>
@@ -84,7 +71,6 @@
         <p style="font-size:.95rem;">✦ Logged in successfully — redirecting to your dashboard.</p>
       </div>
 
-      <!-- Host / customer login -->
       <div id="hostLoginPanel">
         <form id="loginForm" data-validate novalidate action="dashboard.html" method="POST">
           <div class="field">
@@ -97,167 +83,32 @@
             <input type="password" id="l-password" data-required placeholder="••••••••">
             <span class="error">Password must be at least 6 characters.</span>
           </div>
-          <div class="checkbox-row" style="margin-bottom:22px; justify-content:space-between;">
-            <label class="checkbox-row"><input type="checkbox"> Remember me</label>
-            <a href="forgot-password.html" class="small">Forgot password?</a>
+          <div class="auth-checkbox-row">
+            <label class="checkbox-row"><input type="checkbox" id="l-remember"> <span>Remember me</span></label>
+            <a href="forgot-password.html" class="small" style="color:var(--marigold); font-weight:500;">Forgot password?</a>
           </div>
           <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Login</button>
-          <p class="form-note" id="registerLink">New here? <a href="register.html" style="color:var(--marigold);">Register</a></p>
-        </form>
-      </div>
-
-      <!-- Admin login: submits straight to the admin dashboard, no second login page -->
-      <div id="adminLoginPanel" style="display:none;">
-        <form id="adminLoginForm" data-validate novalidate>
-          <div class="field">
-            <label for="a-email">Admin Email</label>
-            <input type="email" id="a-email" data-required placeholder="admin@grandpalacebanquets.in">
-            <span class="error">Please enter a valid email.</span>
-          </div>
-          <div class="field">
-            <label for="a-password">Password</label>
-            <input type="password" id="a-password" data-required placeholder="••••••••">
-            <span class="error">Password must be at least 6 characters.</span>
-          </div>
-          <div class="checkbox-row" style="margin-bottom:22px; justify-content:space-between;">
-            <label class="checkbox-row"><input type="checkbox" id="a-remember" checked> Remember me</label>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block" id="adminSubmitBtn">Go to Admin Dashboard</button>
-          <p class="form-note">Demo access — any email &amp; password (6+ characters) signs you straight in.</p>
+          <a href="dashboard.html" class="btn btn-ghost btn-block" style="margin-top:12px; text-align:center; display:block;">Go to Dashboard</a>
+          <p class="form-note" id="registerLink" style="margin-top:16px;">Don't have an account? <a href="register.html" style="color:var(--marigold); font-weight:600;">Register here</a></p>
         </form>
       </div>
     </div>
   </div>
 </section>
-
 </main>
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <img src="../assets/images/icons/logo.svg" alt="Grand Palace crest" class="brand-mark">
-          <span class="brand-name">Grand <span>Palace</span></span>
-        </a>
-        <p>A palace-inspired banquet venue for weddings, receptions and celebrations that deserve grand surroundings.</p>
-        <div class="social-row">
-          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10.5v3l2.6-1.5Z" fill="currentColor"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="halls.html">Our Halls</a></li>
-          <li><a href="coming-soon.html">Offers</a></li>
-          <li><a href="404.html">New Halls</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>Jubliee Road, Hyderabad, TG 50001</li>
-          <li>+91 98765 43210</li>
-          <li>hello@grandpalacebanquets.in</li>
-          <li>Open daily · 9am – 9pm</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Newsletter</h4>
-        <p class="small">Seasonal offers and decoration inspiration, once a month.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email" aria-label="Email for newsletter">
-          <button type="submit">Join</button>
-        </form>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Grand Palace Banquets. All rights reserved.</span>
-      <span>Powered by <a href="https://abhivorn.com" target="_blank" class="hover:text-white transition-colors">Abhivorn Technologies Pvt Ltd</a></span>
-      <span>Crafted for celebrations that deserve a palace.</span>
-    </div>
-  </div>
-</footer>
-<button class="back-top" aria-label="Back to top">↑</button>
 
+<script src="../assets/js/main.js"></script>
 <script>
-// Host (customer) and Admin login now live on one page. Switching tabs
-// just swaps which panel/copy is shown — nothing navigates away.
-function switchRole(role) {
-  const isAdmin = role === 'admin';
-
-  document.getElementById('userRoleBtn').classList.toggle('active', !isAdmin);
-  document.getElementById('adminRoleBtn').classList.toggle('active', isAdmin);
-
-  document.getElementById('hostLoginPanel').style.display = isAdmin ? 'none' : 'block';
-  document.getElementById('adminLoginPanel').style.display = isAdmin ? 'block' : 'none';
-
-  document.getElementById('authEyebrow').textContent = isAdmin ? 'Admin Login' : 'Customer Login';
-  document.getElementById('authTitle').textContent = isAdmin ? 'Welcome back, Admin' : 'Welcome back';
-  document.getElementById('authSub').textContent = isAdmin
-    ? 'Sign in to manage bookings, halls and site content.'
-    : 'Manage your venue bookings and event preferences.';
-}
-
-// Handle Form Submission explicitly to guarantee redirection
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent standard page refresh
-
-  const successBox = document.querySelector('.form-success');
-  if (successBox) {
-    successBox.style.display = 'block';
-  }
-
-  setTimeout(() => {
-    window.location.href = 'dashboard.html';
-  }, 1000);
-});
-
-// Pre-select the Admin tab if we arrived here via ?role=admin
-// (e.g. someone bookmarked the old admin/login.html page).
-(function preselectRole() {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('role') === 'admin') {
-    switchRole('admin');
-  }
-})();
-
-// Admin login: sets the same session flag the admin panel itself uses
-// (see admin/assets/js/admin-core.js -> Adm.login) and jumps straight
-// to the dashboard — no separate admin/login.html step.
-document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const email = document.getElementById('a-email').value.trim();
-  const password = document.getElementById('a-password').value;
-  if (!email || password.length < 6) {
-    return; // let the built-in field validation styling (data-validate) handle it
-  }
-
-  const remember = document.getElementById('a-remember').checked;
-  const SESSION_KEY = 'gpAdmin_session';
-  if (remember) {
-    localStorage.setItem(SESSION_KEY, '1');
-  } else {
-    sessionStorage.setItem(SESSION_KEY, '1');
-  }
-  localStorage.setItem('gpAdmin_lastLogin', new Date().toISOString());
-
-  const successBox = document.querySelector('.form-success');
-  if (successBox) {
-    successBox.style.display = 'block';
-  }
-
-  setTimeout(() => {
-    window.location.href = '../admin/dashboard.html';
-  }, 600);
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const successBox = document.querySelector('.form-success');
+    if (successBox) successBox.style.display = 'block';
+    setTimeout(() => {
+      window.location.href = 'dashboard.html';
+    }, 1000);
+  });
 });
 </script>
-<script src="../assets/js/main.js"></script>
-<script src="../assets/js/booking.js"></script>
 </body>
 </html>

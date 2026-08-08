@@ -3,165 +3,277 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Invoice — Grand Palace</title>
-<meta name="description" content="View and download your Grand Palace event invoice.">
+<title>Invoice Details — Grand Palace</title>
+<meta name="description" content="View and manage itemized event invoices and payment receipts for Grand Palace Banquets.">
+<script>
+  (function(){
+    var t = localStorage.getItem('gp-theme') || localStorage.getItem('theme');
+    if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
 <link rel="icon" href="../assets/images/icons/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/responsive.css">
 <link rel="stylesheet" href="../assets/css/dark-mode.css">
 <link rel="stylesheet" href="../assets/css/rtl.css">
+<style>
+@media print {
+  .site-header, .site-footer, .invoice-actions, .dash-sidebar { display: none !important; }
+  .invoice-box { border: none !important; box-shadow: none !important; margin: 0 !important; width: 100% !important; }
+}
+</style>
 </head>
 <body>
 <header class="site-header">
-  <nav class="nav container">
-    <a href="index.html" class="brand">
+  <div class="container nav">
+    <a href="../index.html" class="brand">
       <img src="../assets/images/icons/logo.svg" alt="Grand Palace crest" class="brand-mark">
-      <span class="brand-name">Grand <span>Palace</span></span>
+      <span class="brand-name">Grand Palace</span>
     </a>
     <ul class="nav-links">
       <li class="nav-dropdown">
-        <a href="index.html" class="dropdown-trigger">Home <small>▾</small></a>
+        <a href="../index.html">Home ▾</a>
         <div class="dropdown-panel">
-          <a href="index.html">Home — Classic</a>
+          <a href="../index.html">Home — Classic</a>
           <a href="home-2.html">Home — Premium</a>
         </div>
       </li>
       <li><a href="about.html">About</a></li>
       <li><a href="booking.html">Book Now</a></li>
-      <li><a href="halls.html">Halls</a></li>
-      <li><a href="packages.html">Packages</a></li>
+      <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
-      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">
-        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
-        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-      <button class="icon-btn" data-rtl-toggle aria-label="Toggle RTL layout" title="Toggle RTL">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/></svg>
-      </button>
-      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="icon-btn" data-theme-toggle title="Toggle Dark/Light Mode">🌙</button>
+      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode">🌐</button>
+      <a href="login.html" class="btn btn-primary btn-sm">Login</a>
+      <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+  </div>
 </header>
 <div class="mobile-overlay"></div>
 <div class="mobile-panel">
-  <a href="index.html">Home — Classic</a>
-  <a href="home-2.html">Home — Premium</a>
+  <div class="mobile-panel-brand" style="display:flex; align-items:center; gap:10px; padding-bottom:16px; margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,.15);">
+    <img src="../assets/images/icons/logo.svg" alt="Grand Palace crest" style="width:30px; height:30px;">
+    <span style="font-family:var(--font-display); font-size:1.15rem; color:var(--marigold-lt); font-weight:700;">Grand Palace</span>
+  </div>
+
+  <div class="mobile-dropdown">
+    <button type="button" class="mobile-dropdown-trigger" style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:14px 0; color:#fff; font-size:15px; background:none; border:none; border-bottom:1px solid rgba(255,255,255,.08); text-align:left; cursor:pointer;">
+      <span>Home</span>
+      <span class="chevron-icon" style="transition:transform .3s ease; color:var(--marigold); font-size:14px;">▾</span>
+    </button>
+    <div class="mobile-dropdown-menu" style="display:none; padding-left:14px; background:rgba(0,0,0,.15); border-radius:6px; margin:6px 0;">
+      <a href="index.html" style="padding:10px 0; font-size:14px; color:rgba(255,255,255,.85);">Home — Classic</a>
+      <a href="home-2.html" style="padding:10px 0; font-size:14px; color:rgba(255,255,255,.85); border-bottom:none;">Home — Premium</a>
+    </div>
+  </div>
+
   <a href="about.html">About</a>
   <a href="booking.html">Book Now</a>
-  <a href="halls.html">Halls</a>
-  <a href="packages.html">Packages</a>
+  <a href="services.html">Services</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact</a>
-  <a href="login.html">Login</a>
-  <a href="register.html">Register</a>
+  <a href="login.html" class="mobile-login-btn" style="margin-top:20px; display:block; text-align:center; background:var(--marigold); color:var(--wine-dk) !important; font-weight:700; border-radius:999px; padding:12px 20px; border-bottom:none;">Login</a>
 </div>
 
 <main>
 <section class="section" style="background:var(--ivory-dim);">
-  <div class="container">
-    <p id="download-note" class="small text-center" style="max-width:500px; margin:0 auto 20px; display:none;"></p>
-    <div class="invoice-box">
-      <div class="invoice-head">
+  <div class="container" style="max-width:850px;">
+    
+    <!-- ACTION TOOLBAR -->
+    <div class="invoice-actions" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+      <a href="dashboard.html" class="btn btn-ghost btn-sm">&larr; Back to Dashboard</a>
+      <div style="display:flex; gap:10px;">
+        <button onclick="window.print()" class="btn btn-outline-light btn-sm" style="color:var(--wine); border-color:var(--line);">🖨️ Print / Download PDF</button>
+        <button id="btn-pay-balance" class="btn btn-primary btn-sm">💳 Pay Balance Online</button>
+      </div>
+    </div>
+
+    <!-- INVOICE BOX CONTAINER -->
+    <div class="invoice-box" style="background:var(--white); padding:36px; border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow-card);">
+      
+      <div class="invoice-head" style="display:flex; justify-content:space-between; border-bottom:2px solid var(--marigold); padding-bottom:20px; margin-bottom:24px;">
         <div>
-          <span class="brand-name" style="font-size:1.4rem;">Grand <span style="color:var(--marigold);">Palace</span></span>
-          <p class="small" style="margin-top:8px;">221 Palace Road, Bhopal, MP 462001<br>hello@grandpalacebanquets.in</p>
+          <span class="brand-name" style="font-size:1.6rem; color:var(--wine);">Grand <span style="color:var(--marigold);">Palace</span></span>
+          <p class="small" style="color:var(--ink-soft); margin-top:6px; line-height:1.6;">
+            Jubilee Road, Hyderabad, TG 50001<br>
+            GSTIN: 36AAAAA0000A1Z5 | PAN: AAACG1234F<br>
+            Email: billing@grandpalacebanquets.in
+          </p>
         </div>
         <div style="text-align:right;">
-          <h3 style="margin-bottom:4px;">Invoice #GP-1042</h3>
-          <p class="small">Issued 14 Jul 2026</p>
+          <span class="status-tag status-pending" id="inv-status-badge" style="font-size:.85rem; padding:6px 14px;">Advance Deposit Paid</span>
+          <h3 style="margin-top:10px; margin-bottom:4px;" id="inv-number">Invoice #GP-2026-8941</h3>
+          <p class="small" style="color:var(--ink-soft);">Issued Date: 08 August 2026</p>
         </div>
       </div>
 
-      <div class="grid grid-2" style="margin-bottom:10px;">
+      <div class="grid grid-2" style="margin-bottom:24px;">
         <div>
-          <p class="small" style="text-transform:uppercase; letter-spacing:.05em;">Billed To</p>
-          <p><strong>Ananya Kapoor</strong><br>ananya.kapoor@example.com<br>+91 90000 11122</p>
+          <p class="small" style="text-transform:uppercase; letter-spacing:.08em; color:var(--marigold); font-weight:700;">Customer Details</p>
+          <p style="margin:0; line-height:1.6;">
+            <strong id="inv-client-name">Ananya Sharma</strong><br>
+            <span id="inv-client-email">ananya@example.com</span><br>
+            <span id="inv-client-phone">+91 98765 43210</span>
+          </p>
         </div>
         <div style="text-align:right;">
-          <p class="small" style="text-transform:uppercase; letter-spacing:.05em;">Event</p>
-          <p><strong>Maharani Hall</strong><br>12 Sep 2026 · Wedding · 420 guests</p>
+          <p class="small" style="text-transform:uppercase; letter-spacing:.08em; color:var(--marigold); font-weight:700;">Event Reservation</p>
+          <p style="margin:0; line-height:1.6;">
+            <strong id="inv-hall-name">Maharani Grand Hall</strong><br>
+            <span id="inv-date">24 October 2026</span> · <span id="inv-shift">Evening Shift</span><br>
+            Event Type: <span id="inv-event-type">Wedding Ceremony (350 Guests)</span>
+          </p>
         </div>
       </div>
 
-      <table class="invoice-table">
-        <thead><tr><th>Item</th><th>Details</th><th>Amount</th></tr></thead>
-        <tbody>
-          <tr><td>Hall Rental</td><td>Maharani Hall, 8hr access</td><td>₹85,000</td></tr>
-          <tr><td>Package</td><td>Gold</td><td>₹95,000</td></tr>
-          <tr><td>Catering</td><td>Live Counters, 420 guests</td><td>₹1,26,000</td></tr>
-          <tr><td>Decoration</td><td>Royal Decoration</td><td>₹48,000</td></tr>
-          <tr><td>Taxes</td><td>GST 18%</td><td>₹64,440</td></tr>
-        </tbody>
-      </table>
-
-      <div class="invoice-total">Total: ₹4,22,440</div>
-
-      <div class="text-center" style="margin-top:34px;">
-        <button class="btn btn-primary" data-download-invoice>Download Invoice</button>
+      <!-- ITEMIZED LINE ITEMS TABLE -->
+      <div class="table-responsive">
+        <table class="invoice-table" style="width:100%; border-collapse:collapse; margin-bottom:24px;">
+          <thead>
+            <tr style="background:var(--ivory-dim); text-align:left; border-bottom:1px solid var(--line);">
+              <th style="padding:12px;">Line Item</th>
+              <th style="padding:12px;">Description / Specification</th>
+              <th style="padding:12px; text-align:right;">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="inv-items-body">
+            <tr style="border-bottom:1px solid var(--line);">
+              <td style="padding:12px; font-weight:600;">Venue Hall Rental</td>
+              <td style="padding:12px;">Maharani Grand Hall (12,000 sq ft, Evening Shift)</td>
+              <td style="padding:12px; text-align:right;">₹85,000</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);">
+              <td style="padding:12px; font-weight:600;">Decoration Theme Package</td>
+              <td style="padding:12px;">Contemporary Pastel (Orchid Mandap &amp; Mirror Walkway)</td>
+              <td style="padding:12px; text-align:right;">₹75,000</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);">
+              <td style="padding:12px; font-weight:600;">Catering Service</td>
+              <td style="padding:12px;">Royal Awadhi Dum Biryani Spread (350 Plates × ₹950)</td>
+              <td style="padding:12px; text-align:right;">₹3,32,500</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);">
+              <td style="padding:12px; font-weight:600;">GST Tax (18%)</td>
+              <td style="padding:12px;">Government Goods &amp; Services Tax (CGST 9% + SGST 9%)</td>
+              <td style="padding:12px; text-align:right;">₹88,650</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
+      <!-- INVOICE TOTALS BREAKDOWN -->
+      <div style="display:flex; justify-content:flex-end; border-top:2px solid var(--line); padding-top:16px;">
+        <div style="width:100%; max-width:360px; font-size:.95rem; line-height:2;">
+          <div style="display:flex; justify-content:space-between;">
+            <span>Gross Total Amount:</span>
+            <strong id="inv-gross-total">₹5,81,150</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; color:green;">
+            <span>Advance Deposit Paid (25%):</span>
+            <strong id="inv-deposit-paid">- ₹1,45,287</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:1.15rem; font-weight:700; color:var(--wine); border-top:1px solid var(--line); padding-top:8px; margin-top:4px;">
+            <span>Remaining Balance Due:</span>
+            <strong id="inv-balance-due" style="color:var(--marigold);">₹4,35,863</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:30px; padding-top:20px; border-top:1px dashed var(--line); font-size:.85rem; color:var(--ink-soft);">
+        <p style="margin-bottom:6px;"><strong>Payment Terms &amp; Conditions:</strong> Balance amount must be cleared 48 hours prior to the event commencement date. All online payments generate instant receipts.</p>
+        <p style="margin:0;">Bank Details: HDFC Bank | A/C: 50200012345678 | IFSC: HDFC0000123 | Branch: Jubilee Hills</p>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- SIMULATED PAYMENT MODAL -->
+<div id="pay-modal" class="lightbox" style="padding:20px;">
+  <div style="background:var(--white); color:var(--ink); max-width:500px; width:100%; max-height:88vh; overflow-y:auto; -webkit-overflow-scrolling:touch; border-radius:var(--radius); padding:30px; box-shadow:var(--shadow-card); position:relative;">
+    <button id="pay-modal-close" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink);">&times;</button>
+    
+    <h3 style="margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px;">Pay Remaining Balance Online</h3>
+    <p class="small" style="color:var(--ink-soft); margin-bottom:20px;">Balance Due: <strong id="pay-modal-amount" style="color:var(--marigold); font-size:1.1rem;">₹4,35,863</strong></p>
+
+    <form id="pay-form">
+      <div class="field" style="margin-bottom:16px;">
+        <label>Select Payment Gateway</label>
+        <select class="field-input" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:var(--radius);">
+          <option>Razorpay / UPI Instant (GPay / PhonePe)</option>
+          <option>NetBanking (All Major Indian Banks)</option>
+          <option>Credit / Debit Card (Visa / MasterCard / RuPay)</option>
+        </select>
+      </div>
+
+      <div class="field" style="margin-bottom:20px;">
+        <label>UPI ID or Card Number</label>
+        <input type="text" placeholder="e.g. customer@okaxis or 4532 XXXX XXXX 8901" required class="field-input" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:var(--radius);">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Confirm Payment &amp; Download Receipt</button>
+    </form>
+  </div>
+</div>
+
 </main>
+
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand">
-          <img src="../assets/images/icons/logo.svg" alt="Grand Palace crest" class="brand-mark">
-          <span class="brand-name">Grand <span>Palace</span></span>
-        </a>
-        <p>A palace-inspired banquet venue for weddings, receptions and celebrations that deserve grand surroundings.</p>
-        <div class="social-row">
-          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M20 4 4 20" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10.5v3l2.6-1.5Z" fill="currentColor"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="halls.html">Our Halls</a></li>
-          <li><a href="packages.html">Packages</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li>Jubliee Road, Hyderabad, TG 50001</li>
-          <li>+91 98765 43210</li>
-          <li>hello@grandpalacebanquets.in</li>
-          <li>Open daily · 9am – 9pm</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Newsletter</h4>
-        <p class="small">Seasonal offers and decoration inspiration, once a month.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email" aria-label="Email for newsletter">
-          <button type="submit">Join</button>
-        </form>
-      </div>
-    </div>
-    <div class="footer-bottom">
+        <div class="footer-bottom">
       <span>© 2026 Grand Palace Banquets. All rights reserved.</span>
-      <span>Powered by <a href="https://abhivorn.com" target="_blank" class="hover:text-white transition-colors">Abhivorn Technologies Pvt Ltd</a></span>
-      <span>Crafted for celebrations that deserve a palace.</span>
+      <span>Developed by <a href="https://abhivorn.com" target="_blank" style="color:inherit;text-decoration:none;">Abhivorn Technologies Pvt. Ltd.</a></span>
     </div>
   </div>
 </footer>
-<button class="back-top" aria-label="Back to top">↑</button>
 
 <script src="../assets/js/main.js"></script>
-<script src="../assets/js/dashboard.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Read latest booking from localStorage if available
+  try {
+    const bookings = JSON.parse(localStorage.getItem('gp_bookings') || '[]');
+    if (bookings.length > 0) {
+      const latest = bookings[bookings.length - 1];
+      if (latest.id) {
+        document.getElementById('inv-number').textContent = 'Invoice ' + latest.id;
+      }
+      if (latest.name) document.getElementById('inv-client-name').textContent = latest.name;
+      if (latest.email) document.getElementById('inv-client-email').textContent = latest.email;
+      if (latest.hall) document.getElementById('inv-hall-name').textContent = latest.hall;
+      if (latest.date) document.getElementById('inv-date').textContent = latest.date;
+      if (latest.eventType) document.getElementById('inv-event-type').textContent = latest.eventType + (latest.guests ? ' (' + latest.guests + ' Guests)' : '');
+    }
+  } catch(e) {}
+
+  // Payment modal logic
+  const payModal = document.getElementById('pay-modal');
+  const btnPay = document.getElementById('btn-pay-balance');
+  const btnClosePay = document.getElementById('pay-modal-close');
+  const payForm = document.getElementById('pay-form');
+
+  btnPay?.addEventListener('click', () => payModal?.classList.add('open'));
+  btnClosePay?.addEventListener('click', () => payModal?.classList.remove('open'));
+  payModal?.addEventListener('click', (e) => { if (e.target === payModal) payModal.classList.remove('open'); });
+
+  payForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('🎉 Payment Successful!\n\nReceipt #REC-9012 has been issued. Remaining balance is now ₹0. Booking is FULLY CONFIRMED.');
+    payModal?.classList.remove('open');
+    const badge = document.getElementById('inv-status-badge');
+    if (badge) {
+      badge.textContent = 'Fully Paid ✓';
+      badge.className = 'status-tag status-confirmed';
+    }
+    const balanceDue = document.getElementById('inv-balance-due');
+    if (balanceDue) balanceDue.textContent = '₹0 (Paid in Full)';
+  });
+});
+</script>
 </body>
 </html>
