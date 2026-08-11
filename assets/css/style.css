@@ -769,10 +769,12 @@ tr:last-child td{ border-bottom:none; }
 .invoice-total{ text-align:right; font-family:var(--font-display); font-size:1.5rem; color:var(--wine); margin-top:16px; }
 
 /* ---------- Auth pages ---------- */
-.auth-wrap{ min-height:80vh; display:flex; align-items:center; justify-content:center; padding:60px 24px; }
+.auth-wrap{ min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; }
 .auth-visual{ display:none; }
-.auth-form-wrap{ width:100%; max-width:520px; margin:0 auto; }
-.auth-box{ background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:44px; box-shadow:var(--shadow-card); }
+.auth-form-wrap{ width:100%; max-width:420px; margin:0 auto; }
+.auth-box{ background:var(--white); border:1px solid var(--line); border-radius:20px; padding:30px 26px 24px; box-shadow:var(--shadow-card); }
+.auth-box .field{ margin-bottom:16px; }
+
 
 /* ---------- FAQ ---------- */
 .accordion-item{ border-bottom:1px solid var(--line); }
@@ -786,23 +788,273 @@ tr:last-child td{ border-bottom:none; }
 .accordion-a{ max-height:0; overflow:hidden; transition:max-height var(--transition); color:var(--ink-soft); }
 .accordion-item.open .accordion-a{ max-height:240px; padding-bottom:22px; }
 
-/* ---------- Coming soon / 404 ---------- */
-.centered-hero{
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+/* ---------- Coming soon / 404 -----/* ---------- Coming soon / 404 / Auth Cards (Matching Reference Layout) ---------- */
+.centered-hero,
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: linear-gradient(135deg, #FBF7EE 0%, #F5EEDC 50%, #FAF5EA 100%);
   color: var(--ink);
+  padding: 16px 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-.centered-hero h1{ color: var(--wine-deep) !important; }
-.centered-hero p{ color: var(--ink-soft) !important; }
-.countdown{ display:flex; gap:24px; justify-content:center; margin:34px 0; }
-.countdown div{ background:rgba(251,243,227,.06); border:1px solid rgba(212,175,55,.3); border-radius:var(--radius); padding:20px 26px; }
-.countdown strong{ display:block; font-family:var(--font-display); font-size:2.4rem; color:var(--marigold-lt); }
-.countdown span{ font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; }
-.error-code{ font-family:var(--font-display); font-size:8rem; color:var(--marigold-lt); line-height:1; }
+
+.coming-soon-card,
+.auth-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #FFFFFF;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  padding: 22px 24px 18px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08), 0 0 20px rgba(212, 175, 55, 0.1);
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form-wrap {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.coming-soon-card h1,
+.auth-box h2 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--wine-deep, #0B1F18);
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.coming-soon-card p,
+.auth-box p {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.auth-box .field {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.auth-box .field label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 3px;
+  display: block;
+}
+.auth-box .field input {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  height: 38px;
+  box-sizing: border-box;
+}
+
+.auth-checkbox-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.auth-checkbox-row label {
+  font-size: 0.82rem;
+}
+.auth-checkbox-row a.forgot-link {
+  color: var(--marigold);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.auth-box .btn {
+  padding: 10px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+.auth-box .btn-ghost {
+  margin-top: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.82rem;
+}
+
+.auth-box .form-note {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  text-align: center;
+}
+.auth-box .form-note a {
+  color: var(--marigold);
+  font-weight: 600;
+}
+
+/* Card Header Brand Row */
+.card-header-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  width: 100%;
+}
+.brand-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-logo {
+  width: 32px;
+  height: 32px;
+}
+.brand-text {
+  text-align: left;
+}
+.brand-text strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.1;
+  color: var(--wine-deep, #0B1F18);
+  font-weight: 700;
+}
+.brand-text span {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--marigold, #D4AF37);
+  font-weight: 700;
+  display: block;
+  margin-top: 1px;
+}
+
+/* Card Action Buttons (Square rounded buttons on top-right) */
+.card-nav-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 6px !important;
+  align-items: center !important;
+  position: static !important;
+}
+.card-nav-actions .icon-btn {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--wine-deep, #0B1F18);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.card-nav-actions .icon-btn:hover {
+  background: var(--marigold, #D4AF37);
+  color: #0B1F18;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+.countdown{ display:flex; gap:10px; justify-content:center; margin:18px 0; }
+.countdown div{ background:rgba(255,255,255,0.85); border:1px solid rgba(212,175,55,.35); border-radius:var(--radius); padding:10px 14px; min-width:54px; transition: background 0.3s ease, border-color 0.3s ease; }
+.countdown strong{ display:block; font-family:var(--font-display); font-size:1.5rem; color:var(--wine); }
+.countdown span{ font-size:.65rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); }
+.error-code{ font-family:var(--font-display); font-size:4.5rem; color:var(--marigold); line-height:1; }
+
+/* Back to Home Pill Button (Centered inside card bottom) */
+.card-footer-action {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  text-align: center;
+}
+.btn-back-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: var(--wine-deep, #0B1F18);
+  color: #FFFFFF;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+.btn-back-pill:hover {
+  background: var(--marigold, #D4AF37);
+  color: var(--wine-deep, #0B1F18);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+}
+
+/* Auth Page Top Left Pill Button */
+.auth-top-bar {
+  position: fixed;
+  top: 18px;
+  left: 40px;
+  z-index: 100;
+}
+.btn-back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: var(--wine-deep, #0B1F18);
+  color: #FFFFFF;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+.btn-back-home:hover {
+  background: var(--marigold, #D4AF37);
+  color: var(--wine-deep, #0B1F18);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+}
+
+/* Outside Footer Attribution */
+.auth-card-footer {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+.auth-card-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+
+
+
+
 /* ==========================================
    Role Switcher (Host Login / Admin Portal)
    ========================================== */

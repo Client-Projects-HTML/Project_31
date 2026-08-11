@@ -84,3 +84,16 @@ html[dir="rtl"] .newsletter-form {
   direction: rtl;
 }
 
+html[dir="rtl"] .card-nav-actions {
+  right: 18px !important;
+  left: auto !important;
+  flex-direction: row !important;
+}
+
+
+html[dir="rtl"] .auth-top-bar {
+  left: auto !important;
+  right: 60px !important;
+}
+
+
