@@ -42,7 +42,7 @@
     </ul>
     <div class="nav-actions">
       <button class="icon-btn" data-theme-toggle title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
+      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
       <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -76,8 +76,44 @@
 
 <main>
 
-<section class="section">
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <img src="../assets/images/halls/crystal.avif" alt="Our Venues" class="page-hero-bg">
+  <div class="container" data-reveal>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> &bull; Our Venues
+    </div>
+    <h1>Our Venues</h1>
+    <p>Discover six distinct spaces, from intimate courtyards to a 1,200-seat grand hall.</p>
+  </div>
+</section>
+
+<!-- FEATURED SPOTLIGHT -->
+<section class="section" data-reveal>
+  <div class="container grid grid-2" style="gap:60px; align-items:center;">
+    <div>
+      <span class="eyebrow">Flagship Venue</span>
+      <h2>The Maharani Grand Hall</h2>
+      <p style="color:var(--ink-soft); margin-bottom:1.5rem; line-height:1.8;">Our crown jewel. A 12,000 sq. ft. pillarless marvel designed for the most magnificent celebrations in the city. Featuring 24-foot ceilings, imported crystal chandeliers, and a dual-stage setup, it is the ultimate canvas for a royal wedding.</p>
+      <ul style="line-height:2; margin-bottom:24px;">
+        <li>✓ Capacity: Up to 1,200 floating guests</li>
+        <li>✓ Dedicated VIP entry and valet</li>
+        <li>✓ Integrated acoustic sound insulation</li>
+      </ul>
+      <a href="hall-details.html" class="btn btn-primary">Explore Maharani Hall</a>
+    </div>
+    <div class="arch-frame" style="aspect-ratio:4/5;">
+      <img src="../assets/images/halls/rani.jpeg" alt="Maharani Grand Hall" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ALL VENUES -->
+<section class="section" style="background:var(--ivory-dim);">
   <div class="container">
+    <div class="section-head text-center" style="margin-bottom:20px;">
+      <h2>Explore All Venues</h2>
+    </div>
     <div class="filter-bar" data-reveal>
       <button class="active">All</button>
       <button>AC</button>
@@ -134,6 +170,66 @@
           <div class="hall-foot"><div class="hall-price">₹28,000<small>/event</small></div><a href="hall-details.html" class="btn btn-ghost btn-sm">Book Now</a></div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section" data-reveal>
+  <div class="container">
+    <div class="section-head text-center">
+      <span class="eyebrow">At A Glance</span>
+      <h2>Compare Venues</h2>
+    </div>
+    <div style="overflow-x:auto; background:var(--white); border-radius:var(--radius); border:1px solid var(--line);">
+      <table style="width:100%; border-collapse:collapse; text-align:left;">
+        <thead>
+          <tr style="background:var(--ivory-dim); border-bottom:1px solid var(--line);">
+            <th style="padding:16px 24px; color:var(--wine-deep);">Venue</th>
+            <th style="padding:16px 24px; color:var(--wine-deep);">Type</th>
+            <th style="padding:16px 24px; color:var(--wine-deep);">Capacity (Seated / Floating)</th>
+            <th style="padding:16px 24px; color:var(--wine-deep);">Starting Price</th>
+          </tr>
+        </thead>
+        <tbody style="font-size:.9rem;">
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:16px 24px; font-weight:600; color:var(--ink);">Maharani Hall</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">Indoor (AC)</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">600 / 1,200</td>
+            <td style="padding:16px 24px; color:var(--marigold); font-weight:600;">₹85,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:16px 24px; font-weight:600; color:var(--ink);">Heritage Mahal</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">Indoor (AC)</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">350 / 700</td>
+            <td style="padding:16px 24px; color:var(--marigold); font-weight:600;">₹72,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:16px 24px; font-weight:600; color:var(--ink);">Marigold Lawn</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">Outdoor (Open Air)</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">800 / 1,800</td>
+            <td style="padding:16px 24px; color:var(--marigold); font-weight:600;">₹65,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:16px 24px; font-weight:600; color:var(--ink);">Rajwada Court</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">Outdoor (Courtyard)</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">250 / 500</td>
+            <td style="padding:16px 24px; color:var(--marigold); font-weight:600;">₹58,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--line);">
+            <td style="padding:16px 24px; font-weight:600; color:var(--ink);">Emerald Terrace</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">Rooftop</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">120 / 250</td>
+            <td style="padding:16px 24px; color:var(--marigold); font-weight:600;">₹42,000</td>
+          </tr>
+          <tr>
+            <td style="padding:16px 24px; font-weight:600; color:var(--ink);">Crystal Sabha</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">Indoor (AC)</td>
+            <td style="padding:16px 24px; color:var(--ink-soft);">80 / 150</td>
+            <td style="padding:16px 24px; color:var(--marigold); font-weight:600;">₹28,000</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

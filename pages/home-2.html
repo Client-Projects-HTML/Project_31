@@ -19,7 +19,6 @@
 <link rel="stylesheet" href="../assets/css/responsive.css">
 <link rel="stylesheet" href="../assets/css/dark-mode.css">
 <link rel="stylesheet" href="../assets/css/rtl.css">
-<link rel="stylesheet" href="../assets/css/home-2.css">
 </head>
 <body>
 
@@ -45,7 +44,7 @@
     </ul>
     <div class="nav-actions">
       <button class="icon-btn" data-theme-toggle title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
+      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
       <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -77,161 +76,144 @@
   <a href="login.html" class="mobile-login-btn" style="margin-top:20px; display:block; text-align:center; background:var(--marigold); color:var(--wine-dk) !important; font-weight:700; border-radius:999px; padding:12px 20px; border-bottom:none;">Login</a>
 </div>
 
-<!-- ============ PREMIUM FULL-BLEED HERO ============ -->
-<section class="hero-premium">
-  <div class="ph has-photo"><img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRft0SfNV41g_jrnsoRpQCgh-H2edWlC8JKcO09WwKhaflhyGc7_KfmN6Xid0bG9dHMB9VSNuJ3GMLzDIo" alt="Royal Court hall interior – Grand Palace premium banquet venue" loading="lazy"></div>
-  <div class="hero-premium-content">
-    <div class="eyebrow">The Grand Palace Signature Experience</div>
-    <h1>An address <em>reserved</em><br>for the extraordinary</h1>
-    <p class="lede">A curated, concierge-led approach to hosting — one planner, one vision, four venues to choose from. This is Grand Palace at its most premium.</p>
-    <div class="hero-cta">
-      <a href="booking.html" class="btn btn-gold">Reserve Your Date</a>
-      <a href="halls.html" class="btn btn-outline-light">Explore The Venues</a>
+<main>
+<!-- ============ PREMIUM HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" style="color:var(--marigold);">The Signature Experience</span>
+      <h1 style="font-size: clamp(2.5rem, 5vw, 4.2rem);">An address <em>reserved</em> for the extraordinary.</h1>
+      <p class="lead">A curated, concierge-led approach to hosting. One dedicated planner, exclusive venue access, and priority reservations. This is Grand Palace at its absolute finest.</p>
+      <div class="hero-actions">
+        <a href="booking.html" class="btn btn-primary" style="background:var(--marigold); color:var(--wine-deep);">Reserve Your Date</a>
+        <a href="halls.html" class="btn btn-ghost">Explore Premium Venues</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>18</strong><span>Years Hosting</span></div>
+        <div><strong>1200+</strong><span>Signature Events</span></div>
+        <div><strong>4</strong><span>Luxury Halls</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="arch-frame"><img src="../assets/images/halls/raj.jpeg" alt="Royal Court hall interior – premium banquet venue" loading="eager"></div>
+      <div class="arch-badge" style="background:var(--marigold); color:var(--wine-dk);"><strong>V.I.P</strong><span>Dedicated Concierge Service</span></div>
     </div>
   </div>
+  <div class="jali-divider"></div>
 </section>
 
-<div class="container">
-  <div class="hero-stats-float">
-    <div><strong>18</strong><span>Years Hosting</span></div>
-    <div><strong>1200+</strong><span>Events Held</span></div>
-    <div><strong>4</strong><span>Halls &amp; Lawns</span></div>
-    <div><strong>4.9</strong><span>Average Rating</span></div>
-  </div>
-</div>
-
-<!-- ============ SIGNATURE INTRO (asymmetric) ============ -->
-<section>
+<!-- ============ ABOUT THE PREMIUM PATH ============ -->
+<section class="section" data-reveal>
   <div class="container">
-    <div class="story-row">
-      <div class="story-media">
-        <div class="ph ivory has-photo"><img src="https://www.weddingsbyneerajkamra.com/images/blog/luxury-wedding-planner-Mumbai.jpg" alt="Concierge event planning – Grand Palace" loading="lazy"></div>
-      </div>
-      <div class="story-text">
-        <div class="eyebrow">A Different Way To Host</div>
-        <h2>Every detail considered, before you have to ask</h2>
-        <p class="text-muted" style="margin-top:1rem;">Where Grand Palace's classic experience is built for flexibility and value, our premium path is built for families who want one point of contact, one coordinated vision, and nothing left to chance — from the first site visit to the final send-off.</p>
-        <ul class="story-points">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Dedicated senior event coordinator from day one</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Private walkthroughs outside public visiting hours</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Priority date holds while you finalise your guest list</span></li>
+    <div class="grid grid-2" style="align-items:center; gap:60px;">
+      <div class="arch-frame"><img src="../assets/images/halls/heritage.webp" alt="Concierge event planning" loading="lazy"></div>
+      <div>
+        <span class="eyebrow" style="color:var(--marigold);">A Different Way To Host</span>
+        <h2>Every detail considered, before you even have to ask.</h2>
+        <p style="color:var(--ink-soft); margin-bottom:20px;">Where our classic experience is built for flexibility, the Premium path is reserved for families who want one point of contact, one coordinated vision, and nothing left to chance.</p>
+        <ul style="list-style:none; padding:0; margin-bottom:28px; display:flex; flex-direction:column; gap:12px; color:var(--ink-soft);">
+          <li style="display:flex; align-items:center; gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--marigold)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Dedicated senior event coordinator from day one</li>
+          <li style="display:flex; align-items:center; gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--marigold)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Private walkthroughs outside public visiting hours</li>
+          <li style="display:flex; align-items:center; gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--marigold)" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Priority date holds while you finalise your guest list</li>
         </ul>
-        <a href="about.html" class="btn btn-outline">Meet The Team <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-
-    <!-- ============ ALTERNATING VENUE SHOWCASE ============ -->
-    <div class="story-row reverse">
-      <div class="story-media">
-        <div class="ph wine has-photo"><img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTMlwIKIIVwHPqvc5pts_yD8KjoYOnmdMezQJMwzrGCQzFBzCirhm8bD33XiqA49hIBTlSTVatiAKjJdZo" alt="Royal Court flagship hall – Grand Palace" loading="lazy"></div>
-      </div>
-      <div class="story-text">
-        <div class="eyebrow">Flagship Venue</div>
-        <h2>The Royal Court</h2>
-        <p class="text-muted" style="margin-top:1rem;">Our 1,200-guest flagship hall — soaring ceilings, a private bridal suite and a stage built for a grand entrance. The most requested venue for weddings that need to be remembered.</p>
-        <ul class="story-points">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Seats up to 1,200 guests, fully climate-controlled</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Private bridal suite and VIP lounge included</span></li>
-        </ul>
-        <a href="hall-details.html" class="btn btn-outline">View Royal Court <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-
-    <div class="story-row" style="margin-bottom:0;">
-      <div class="story-media">
-        <div class="ph has-photo"><img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcToKOvwOYgs3vGowK-xuCt3HeAp8XQchCXcM1mGAHo6PupQe0xiYYRswxM6LrNAiped07haMfIMe3oLou4" alt="Crystal Ballroom hall – Grand Palace" loading="lazy"></div>
-      </div>
-      <div class="story-text">
-        <div class="eyebrow">Intimate &amp; Elegant</div>
-        <h2>Crystal Ballroom</h2>
-        <p class="text-muted" style="margin-top:1rem;">An 800-guest ballroom with chandelier lighting and a marble dance floor — the choice for receptions and milestone celebrations that call for a more intimate scale.</p>
-        <ul class="story-points">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Seats up to 800 guests</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>In-house lighting design and dance floor included</span></li>
-        </ul>
-        <a href="hall-details.html" class="btn btn-outline">View Crystal Ballroom <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+        <a href="about.html" class="btn btn-ghost">Meet The Planning Team</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="section-alt">
+<!-- ============ FLAGSHIP VENUES ============ -->
+<section class="section" style="background:var(--ivory-dim);">
   <div class="container">
-    <div class="section-head center">
-      <div class="eyebrow">How It Works</div>
-      <h2>From first call to closing toast</h2>
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" style="color:var(--marigold);">Flagship Venues</span>
+      <h2>Reserved for the extraordinary</h2>
+      <p>Our most requested, expansive venues featuring soaring ceilings, VIP lounges, and private bridal suites.</p>
     </div>
-    <div class="process-track">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <h6>Private Consultation</h6>
-        <p class="text-muted" style="font-size:.88rem;">Share your date, guest count and vision with your coordinator.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <h6>Venue &amp; Design</h6>
-        <p class="text-muted" style="font-size:.88rem;">Walk the shortlisted halls and finalise décor, catering and lighting.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <h6>Confirm &amp; Plan</h6>
-        <p class="text-muted" style="font-size:.88rem;">Lock your date, sign off the run-of-show and meet your on-site team.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <h6>Celebrate</h6>
-        <p class="text-muted" style="font-size:.88rem;">Your coordinator manages every moving part — you enjoy the day.</p>
-      </div>
+    <div class="grid grid-2" data-reveal style="gap:40px;">
+      <article class="hall-card">
+        <div class="arch-frame" style="height:350px;"><img src="../assets/images/halls/crystal.avif" alt="The Royal Court flagship hall" loading="lazy"></div>
+        <div class="hall-body">
+          <h3 style="font-size: 1.5rem;">The Royal Court</h3>
+          <p style="color:var(--ink-soft); font-size: 0.95rem; margin-bottom: 16px;">Our 1,200-guest flagship hall. Features a private bridal suite and a stage built for a grand entrance.</p>
+          <div class="hall-meta" style="margin-bottom: 24px;">
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 1,200 Guests</span>
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg> Climate Control</span>
+          </div>
+          <div class="hall-foot">
+            <a href="hall-details.html" class="btn btn-primary" style="width:100%; text-align:center;">View Royal Court Details</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hall-card">
+        <div class="arch-frame" style="height:350px;"><img src="../assets/images/halls/emerald.jpg" alt="Crystal Ballroom" loading="lazy"></div>
+        <div class="hall-body">
+          <h3 style="font-size: 1.5rem;">Crystal Ballroom</h3>
+          <p style="color:var(--ink-soft); font-size: 0.95rem; margin-bottom: 16px;">An 800-guest ballroom with chandelier lighting and a marble dance floor for elegant milestone celebrations.</p>
+          <div class="hall-meta" style="margin-bottom: 24px;">
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 800 Guests</span>
+            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> In-house Lighting</span>
+          </div>
+          <div class="hall-foot">
+            <a href="hall-details.html" class="btn btn-ghost" style="width:100%; text-align:center;">View Crystal Ballroom</a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ SPOTLIGHT PACKAGE ============ -->
-<section>
+<!-- ============ THE PLATINUM PACKAGE ============ -->
+<section class="section">
   <div class="container">
-    <div class="spotlight-package">
-      <div class="ph has-photo"><img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTvuo92I0FSP4tyhEgbJRfzq0MW_ziDfaRPZlGxfB61oDP7y00gfnYi-YdPLkgN7QqtfbTQU3Zm6kb2TAw" alt="Platinum Package – Grand Palace premium venue" loading="lazy"></div>
-      <div class="spotlight-package-body">
-        <div class="eyebrow" style="color:var(--color-gold-400);">Most Requested</div>
+    <div class="grid grid-2" style="align-items:center; gap:60px;">
+      <div>
+        <span class="eyebrow" style="color:var(--marigold);">Most Requested</span>
         <h2>The Platinum Experience</h2>
-        <p>Our most complete package — luxury décor, multi-cuisine catering, live entertainment and a dedicated coordinator, bundled into a single tailored quote.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Luxury decoration &amp; florals</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Multi-cuisine catering</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Live music &amp; DJ</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Professional photography</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Bridal suite access</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 6 6L20 6"/></svg><span>Dedicated coordinator</span></li>
-        </ul>
-        <a href="packages.html" class="btn btn-gold">See All Packages</a>
+        <p style="color:var(--ink-soft); margin-bottom:28px;">Our most complete package — luxury décor, multi-cuisine catering, live entertainment and a dedicated coordinator, bundled into a single tailored quote for your absolute peace of mind.</p>
+        <div class="pill-row" style="margin-bottom:30px;">
+          <span class="pill" style="border-color:var(--marigold);">Luxury Decoration</span>
+          <span class="pill" style="border-color:var(--marigold);">Multi-Cuisine Catering</span>
+          <span class="pill" style="border-color:var(--marigold);">Live DJ &amp; Music</span>
+          <span class="pill" style="border-color:var(--marigold);">Pro Photography</span>
+        </div>
+        <a href="packages.html" class="btn btn-primary" style="background:var(--marigold); color:var(--wine-dk);">See Premium Packages</a>
       </div>
+      <div class="arch-frame"><img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTvuo92I0FSP4tyhEgbJRfzq0MW_ziDfaRPZlGxfB61oDP7y00gfnYi-YdPLkgN7QqtfbTQU3Zm6kb2TAw" alt="Platinum Package Experience" loading="lazy"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ TESTIMONIAL SPOTLIGHT ============ -->
-<section class="section-dark">
-  <div class="jali-bg"></div>
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" style="background:var(--ivory-dim);">
   <div class="container">
-    <div class="section-head center">
-      <div class="eyebrow">In Their Words</div>
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" style="color:var(--marigold);">In Their Words</span>
       <h2>Told by the families who trusted us</h2>
     </div>
-    <div class="testi-slider" data-slider>
-      <div class="testi-slide active">
-        <div class="testi-avatar">AR</div>
-        <div class="stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <q>The Royal Court took our breath away — every guest is still talking about the entrance.</q>
-        <div class="testi-name">Ananya &amp; Rohit</div>
-        <div class="testi-role">Married at Grand Palace, March 2026</div>
+    <div data-reveal>
+      <div data-slide class="testimonial-card">
+        <div class="stars" style="color:var(--marigold);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"The Royal Court took our breath away — every guest is still talking about the grand entrance."</p>
+        <div class="testimonial-person"><img src="../assets/images/team/avatar-1.svg" alt=""><span>Ananya &amp; Rohit, Married March 2026</span></div>
       </div>
-      <div class="testi-slide">
-        <div class="testi-avatar">TD</div>
-        <div class="stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <q>The staff treated our parents' anniversary like it was their own family event.</q>
-        <div class="testi-name">The Deshmukh Family</div>
-        <div class="testi-role">60th Anniversary Celebration</div>
+      <div data-slide class="testimonial-card">
+        <div class="stars" style="color:var(--marigold);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"The staff treated our parents' anniversary like it was their own family event. Truly a VIP experience."</p>
+        <div class="testimonial-person"><img src="../assets/images/team/avatar-2.svg" alt=""><span>The Deshmukh Family, 60th Anniversary</span></div>
       </div>
       <div class="slider-dots"></div>
     </div>
@@ -239,16 +221,15 @@
 </section>
 
 <!-- ============ FINAL CTA ============ -->
-<section>
-  <div class="container">
-    <div class="cta-banner">
-      <div class="eyebrow" style="justify-content:center;color:var(--color-gold-400);">Limited Dates Remaining</div>
-      <h2>Your date deserves the premium experience</h2>
-      <p style="max-width:520px;margin:0 auto 2rem;">Speak with a senior coordinator today — priority holds are available for the next 90 days.</p>
-      <a href="booking.html" class="btn btn-gold">Reserve Your Venue</a>
-    </div>
+<section class="section-tight">
+  <div class="cta-band" data-reveal style="background:var(--wine-deep); color:#fff; border-top: 4px solid var(--marigold);">
+    <span class="eyebrow" style="color:var(--marigold-lt);">Limited Dates Remaining</span>
+    <h2 style="color:#fff;">Your date deserves the premium experience.</h2>
+    <p style="color:var(--cream-text);">Speak with a senior coordinator today — priority holds are available for the next 90 days.</p>
+    <a href="booking.html" class="btn btn-primary" style="background:var(--marigold); color:var(--wine-deep);">Reserve Your Venue</a>
   </div>
 </section>
+</main>
 
 <footer class="site-footer">
   <div class="container">

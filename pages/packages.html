@@ -42,7 +42,7 @@
     </ul>
     <div class="nav-actions">
       <button class="icon-btn" data-theme-toggle title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
+      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
       <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -76,46 +76,155 @@
 
 <main>
 
-<section class="section">
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <img src="../assets/images/hero/hero1.avif" alt="Event Packages" class="page-hero-bg">
+  <div class="container" data-reveal>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> &bull; Event Packages
+    </div>
+    <h1>Event Packages</h1>
+    <p>Explore our thoughtfully curated event collections. Whether you're planning an intimate gathering or a magnificent royal wedding, our packages offer transparent pricing and unparalleled luxury.</p>
+  </div>
+</section>
+
+<section class="section" data-reveal>
   <div class="container">
-    <div class="grid grid-3" data-reveal>
-      <div class="package-card">
-        <span class="tier-tag">Silver</span>
-        <h3>₹45,000</h3>
-        <ul>
-          <li>Basic decoration</li>
-          <li>Chairs &amp; tables for 150</li>
-          <li>Stage setup</li>
-          <li>4-hour hall access</li>
-        </ul>
-        <a href="booking.html" class="btn btn-ghost btn-block">Choose Silver</a>
+    <div class="section-head text-center">
+      <span class="eyebrow">The Collections</span>
+      <h2>Curated Event Experiences</h2>
+      <p style="max-width:600px; margin:0 auto;">From intimate gatherings to grand galas, our collections provide transparent, all-inclusive pricing without hidden fees.</p>
+    </div>
+
+    <!-- Package 1 -->
+    <div class="grid grid-2" style="gap:50px; align-items:center; margin-bottom:80px;">
+      <div class="arch-frame" style="aspect-ratio:4/5;">
+        <img src="../assets/images/halls/crystal.avif" alt="Silver Package Setup" loading="lazy">
       </div>
-      <div class="package-card featured">
-        <span class="tier-tag">Gold</span>
-        <h3>₹95,000</h3>
-        <ul>
-          <li>Premium decoration</li>
-          <li>Full-service catering</li>
-          <li>Designer lighting</li>
-          <li>8-hour hall access</li>
-          <li>Dedicated event manager</li>
+      <div>
+        <span class="tier-tag">Silver Collection</span>
+        <h3 style="margin-top:16px;">The Essential Elegance</h3>
+        <div style="font-size:2rem; font-family:var(--font-display); color:var(--marigold); margin-bottom:20px;">₹45,000 <span style="font-size:1rem; color:var(--ink-soft); font-family:var(--font-sans);">/ event</span></div>
+        <p style="color:var(--ink-soft); margin-bottom:24px;">Perfect for intimate gatherings and pre-wedding ceremonies. We provide the essential foundation of luxury.</p>
+        <ul style="line-height:2; margin-bottom:30px;">
+          <li>✓ 4-Hour Exclusive Hall Access</li>
+          <li>✓ Classic Floral Stage Backdrop</li>
+          <li>✓ Banquet Chairs &amp; Tables for up to 150 guests</li>
+          <li>✓ Standard Ambient Lighting</li>
+          <li>✓ Basic Audio/PA System</li>
         </ul>
-        <a href="booking.html" class="btn btn-primary btn-block">Choose Gold</a>
-      </div>
-      <div class="package-card">
-        <span class="tier-tag">Platinum</span>
-        <h3>₹1,85,000</h3>
-        <ul>
-          <li>Luxury decoration</li>
-          <li>Premium multi-cuisine catering</li>
-          <li>Live music &amp; DJ</li>
-          <li>Professional photography</li>
-          <li>Full-day hall access</li>
-        </ul>
-        <a href="booking.html" class="btn btn-ghost btn-block">Choose Platinum</a>
+        <a href="booking.html?package=Silver" class="btn btn-ghost">Select Silver Collection</a>
       </div>
     </div>
-    <p class="text-center small" style="margin-top:40px;">All packages can be customised — mention your guest count and cuisine preferences in the booking form.</p>
+
+    <!-- Package 2 -->
+    <div class="grid grid-2" style="gap:50px; align-items:center; margin-bottom:80px;">
+      <div style="order:2;">
+        <div class="arch-frame" style="aspect-ratio:4/5;">
+          <img src="../assets/images/halls/emerald.jpg" alt="Gold Package Setup" loading="lazy">
+        </div>
+      </div>
+      <div style="order:1;">
+        <span class="tier-tag" style="background:var(--marigold); color:var(--wine-deep);">Gold Collection</span>
+        <h3 style="margin-top:16px;">The Signature Experience</h3>
+        <div style="font-size:2rem; font-family:var(--font-display); color:var(--marigold); margin-bottom:20px;">₹95,000 <span style="font-size:1rem; color:var(--ink-soft); font-family:var(--font-sans);">/ event</span></div>
+        <p style="color:var(--ink-soft); margin-bottom:24px;">Our most popular tier. Enjoy a fully-managed event with premium décor and a dedicated coordinator.</p>
+        <ul style="line-height:2; margin-bottom:30px;">
+          <li>✓ 8-Hour Exclusive Hall Access</li>
+          <li>✓ Premium Theme Mandap or Stage Décor</li>
+          <li>✓ VIP Sofa Seating &amp; Guest Chair Covers</li>
+          <li>✓ Dedicated Event Coordinator on site</li>
+          <li>✓ Welcome Drink Counters &amp; Cold Pyro Entry</li>
+        </ul>
+        <a href="booking.html?package=Gold" class="btn btn-primary">Select Gold Collection</a>
+      </div>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="grid grid-2" style="gap:50px; align-items:center;">
+      <div class="arch-frame" style="aspect-ratio:4/5;">
+        <img src="../assets/images/halls/marigold.webp" alt="Platinum Package Setup" loading="lazy">
+      </div>
+      <div>
+        <span class="tier-tag" style="background:var(--wine-deep); color:var(--marigold);">Platinum Collection</span>
+        <h3 style="margin-top:16px;">The Royal Affair</h3>
+        <div style="font-size:2rem; font-family:var(--font-display); color:var(--marigold); margin-bottom:20px;">₹1,85,000 <span style="font-size:1rem; color:var(--ink-soft); font-family:var(--font-sans);">/ event</span></div>
+        <p style="color:var(--ink-soft); margin-bottom:24px;">For those who desire uncompromising luxury. An all-inclusive premium experience featuring full-scale production and catering tie-ups.</p>
+        <ul style="line-height:2; margin-bottom:30px;">
+          <li>✓ Full-Day (14 Hour) Estate Access</li>
+          <li>✓ Custom 3D Floral Installations &amp; Starlight Ceiling</li>
+          <li>✓ Live Entertainment (DJ or Classical Band)</li>
+          <li>✓ Premium Multi-Cuisine Buffet for up to 300 guests</li>
+          <li>✓ Professional Photography &amp; Drone Coverage</li>
+        </ul>
+        <a href="booking.html?package=Platinum" class="btn btn-primary" style="background:var(--wine-deep); color:var(--marigold);">Select Platinum Collection</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ENHANCEMENTS SECTION -->
+<section class="section" style="background:var(--ivory-dim);" data-reveal>
+  <div class="container">
+    <div class="section-head text-center">
+      <span class="eyebrow">A La Carte</span>
+      <h2>Event Enhancements</h2>
+      <p>Elevate your package with these optional luxury additions.</p>
+    </div>
+    <div class="grid grid-4" style="gap:24px;">
+      <div class="hall-card hall-body" style="padding:24px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:12px;">📸</div>
+        <h4>360° Photobooth</h4>
+        <p class="small" style="color:var(--ink-soft); margin-bottom:12px;">Interactive video booth for guests.</p>
+        <div style="font-weight:700; color:var(--marigold);">+₹15,000</div>
+      </div>
+      <div class="hall-card hall-body" style="padding:24px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:12px;">🍦</div>
+        <h4>Nitrogen Bar</h4>
+        <p class="small" style="color:var(--ink-soft); margin-bottom:12px;">Live liquid nitrogen ice cream.</p>
+        <div style="font-weight:700; color:var(--marigold);">+₹25,000</div>
+      </div>
+      <div class="hall-card hall-body" style="padding:24px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:12px;">✨</div>
+        <h4>Sparkular Exit</h4>
+        <p class="small" style="color:var(--ink-soft); margin-bottom:12px;">Cold pyrotechnics for couple entry.</p>
+        <div style="font-weight:700; color:var(--marigold);">+₹12,000</div>
+      </div>
+      <div class="hall-card hall-body" style="padding:24px; text-align:center;">
+        <div style="font-size:2rem; margin-bottom:12px;">🚗</div>
+        <h4>Valet Service</h4>
+        <p class="small" style="color:var(--ink-soft); margin-bottom:12px;">Dedicated valets for up to 200 cars.</p>
+        <div style="font-weight:700; color:var(--marigold);">+₹8,000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section" data-reveal>
+  <div class="container" style="max-width:800px;">
+    <div class="section-head text-center">
+      <span class="eyebrow">Questions?</span>
+      <h2>Package Details FAQ</h2>
+    </div>
+    <div style="border-top:1px solid var(--line);">
+      <div style="padding:24px 0; border-bottom:1px solid var(--line);">
+        <h4 style="margin-bottom:8px;">Can we customize a package?</h4>
+        <p class="small" style="color:var(--ink-soft); margin-bottom:0;">Absolutely. While our packages offer bundled value, our concierge can add or remove elements to perfectly suit your vision and budget.</p>
+      </div>
+      <div style="padding:24px 0; border-bottom:1px solid var(--line);">
+        <h4 style="margin-bottom:8px;">Do prices include taxes?</h4>
+        <p class="small" style="color:var(--ink-soft); margin-bottom:0;">Prices listed are base prices. An 18% GST is applicable on all venue and service bookings as per government regulations.</p>
+      </div>
+      <div style="padding:24px 0; border-bottom:1px solid var(--line);">
+        <h4 style="margin-bottom:8px;">What is the payment schedule?</h4>
+        <p class="small" style="color:var(--ink-soft); margin-bottom:0;">We require a 30% advance to secure your date, 50% one month prior to the event, and the remaining 20% one week before the event date.</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="faq.html" class="btn btn-ghost">View All FAQs</a>
+    </div>
   </div>
 </section>
 

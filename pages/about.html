@@ -42,7 +42,7 @@
     </ul>
     <div class="nav-actions">
       <button class="icon-btn" data-theme-toggle title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
+      <button class="icon-btn" data-rtl-toggle title="Toggle RTL Mode" aria-label="Toggle RTL Mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></button>
       <a href="login.html" class="btn btn-primary btn-sm">Login</a>
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -76,20 +76,72 @@
 
 <main>
 
-<section class="section" style="background:var(--ivory-dim);" data-reveal>
-  <div class="container grid grid-2" style="gap:40px;">
-    <div class="hall-card hall-body" style="padding:34px;">
-      <span class="eyebrow">Vision</span>
-      <h3>To be the first name Hyderabad thinks of for a celebration.</h3>
-      <p class="small">Not the biggest hall in the city — the one hosts recommend without being asked.</p>
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <img src="../assets/images/halls/heritage.webp" alt="About Grand Palace" class="page-hero-bg">
+  <div class="container" data-reveal>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> &bull; About Grand Palace
     </div>
-    <div class="hall-card hall-body" style="padding:34px;">
-      <span class="eyebrow">Mission</span>
-      <h3>Stress-free celebrations, from enquiry to the last dance.</h3>
-      <p class="small">One point of contact, transparent pricing, and a team that treats your date like it's the only one on the calendar.</p>
+    <h1>About Grand Palace</h1>
+    <p>Welcome to Grand Palace, where tradition meets modern luxury. Discover the story of our heritage and the passionate team dedicated to making your celebrations unforgettable.</p>
+  </div>
+</section>
+
+<section class="section" data-reveal>
+  <div class="container grid grid-2" style="gap:60px; align-items:center;">
+    <div>
+      <div class="arch-frame" style="aspect-ratio:4/5;">
+        <img src="../assets/images/halls/marigold.webp" alt="Grand Palace exterior architecture" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow">Our Heritage</span>
+      <h2>A Legacy of Grandeur</h2>
+      <p style="color:var(--ink-soft); margin-bottom:1.5rem; line-height:1.8;">Founded in 2014, Grand Palace was born from a singular vision: to bring the architectural majesty of Jaipur's royal courts to the heart of Hyderabad. We believed that a celebration is not just an event; it is a milestone in your family's history, and it deserves a setting that reflects its importance.</p>
+      <p style="color:var(--ink-soft); margin-bottom:2rem; line-height:1.8;">What started as a single 300-guest hall has blossomed into a magnificent six-venue estate. From the intricate stone carvings of the Rajwada Courtyard to the sweeping, pillarless expanse of the Maharani Grand Hall, every inch of our property has been designed to evoke a sense of awe and timeless elegance.</p>
+      <div class="hero-stats" style="border:none; padding:0; justify-content:flex-start; gap:40px;">
+        <div><strong>12+</strong><span>Years</span></div>
+        <div><strong>1,800+</strong><span>Events Hosted</span></div>
+      </div>
     </div>
   </div>
 </section>
+
+
+<section class="section" style="background:var(--ivory-dim);" data-reveal>
+  <div class="container">
+    <div class="section-head text-center" style="display:flex; flex-direction:column; align-items:center;">
+      <span class="eyebrow">Our Promise</span>
+      <h2>The Pillars of Our Service</h2>
+      <p>We do not just rent spaces; we curate experiences built on these core principles.</p>
+    </div>
+    <div class="grid grid-3" style="gap:30px;">
+      <div class="hall-card hall-body" style="padding:40px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <div style="width:60px; height:60px; border-radius:50%; background:rgba(212,175,55,0.15); display:flex; align-items:center; justify-content:center; color:var(--marigold); margin-bottom:20px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>Uncompromising Quality</h3>
+        <p class="small" style="color:var(--ink-soft);">From the imported crystal chandeliers to the thread count of our linens, we accept nothing less than absolute perfection.</p>
+      </div>
+      <div class="hall-card hall-body" style="padding:40px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <div style="width:60px; height:60px; border-radius:50%; background:rgba(212,175,55,0.15); display:flex; align-items:center; justify-content:center; color:var(--marigold); margin-bottom:20px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Dedicated Concierge</h3>
+        <p class="small" style="color:var(--ink-soft);">One point of contact, transparent pricing, and a team that treats your date like it's the only one on our calendar.</p>
+      </div>
+      <div class="hall-card hall-body" style="padding:40px; text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <div style="width:60px; height:60px; border-radius:50%; background:rgba(212,175,55,0.15); display:flex; align-items:center; justify-content:center; color:var(--marigold); margin-bottom:20px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Absolute Privacy</h3>
+        <p class="small" style="color:var(--ink-soft);">Separate entrances, soundproofed walls, and discrete service routes ensure your celebration remains exclusively yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section" data-reveal>
   <div class="container">
@@ -110,49 +162,48 @@
       <!-- Founder -->
       <div class="text-center">
         <div class="arch-frame" style="aspect-ratio:5/6;">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="A. Sharma portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+          <img src="../assets/images/team/team-1.jpg" alt="A. Sharma portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <h4 style="margin-top:14px;">A. Sharma</h4>
-        <p class="small">Founder</p>
+        <p class="small">Founder & Chairman</p>
       </div>
 
       <!-- Events Head -->
       <div class="text-center">
         <div class="arch-frame" style="aspect-ratio:5/6;">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="R. Verma portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+          <img src="../assets/images/team/team-2.jpg" alt="R. Verma portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <h4 style="margin-top:14px;">R. Verma</h4>
-        <p class="small">Events Head</p>
+        <p class="small">Director of Events</p>
       </div>
 
       <!-- Chef Partner -->
       <div class="text-center">
         <div class="arch-frame" style="aspect-ratio:5/6;">
-          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="P. Nair portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+          <img src="../assets/images/team/team-3.jpg" alt="P. Nair portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <h4 style="margin-top:14px;">P. Nair</h4>
-        <p class="small">Chef Partner</p>
+        <p class="small">Executive Chef Partner</p>
       </div>
 
       <!-- Decor Lead -->
       <div class="text-center">
         <div class="arch-frame" style="aspect-ratio:5/6;">
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="S. Iyer portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+          <img src="../assets/images/team/team-4.jpg" alt="S. Iyer portrait" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <h4 style="margin-top:14px;">S. Iyer</h4>
-        <p class="small">Decor Lead</p>
+        <p class="small">Head of Decor & Aesthetics</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" data-reveal>
+<section class="section-tight" data-reveal style="padding-top:0;">
   <div class="container">
-    <div class="hero-stats" style="border:none; padding:0;">
-      <div><strong>12+</strong><span>Years</span></div>
-      <div><strong>6</strong><span>Venues</span></div>
-      <div><strong>1,800+</strong><span>Events</span></div>
-      <div><strong>4.9</strong><span>Avg. Rating</span></div>
+    <div class="cta-band" style="background:var(--wine-deep); color:var(--white); padding:60px; border-radius:var(--radius); text-align:center;">
+      <h2 style="color:var(--marigold-lt); margin-bottom:16px;">Begin Your Journey With Us</h2>
+      <p style="color:var(--cream-text); font-size:1.1rem; max-width:600px; margin:0 auto 30px;">Speak with our concierge team to schedule a private walkthrough of the estate.</p>
+      <a href="contact.html" class="btn btn-primary" style="background:var(--marigold); color:var(--wine-deep); font-weight:700;">Contact Concierge</a>
     </div>
   </div>
 </section>

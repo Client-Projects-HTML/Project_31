@@ -41,7 +41,7 @@ html, body {
     padding: 0 24px;
   }
   .grid-4 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   .dash-cards {
     grid-template-columns: repeat(3, 1fr);
