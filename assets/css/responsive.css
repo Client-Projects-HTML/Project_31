@@ -76,6 +76,36 @@ html, body {
   .nav-actions .btn {
     display: none !important;
   }
+  /* Proper spacing: logo left, icons right with auto gap */
+  .nav {
+    gap: 0;
+  }
+  .brand {
+    flex-shrink: 0;
+  }
+  .nav-actions {
+    gap: 6px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  /* Smaller icon buttons on mobile/tablet */
+  .nav-actions .icon-btn,
+  .nav-actions .hamburger {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+  }
+  /* Only resize SVGs inside icon-btn, NOT hamburger spans */
+  .nav-actions .icon-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  /* Keep hamburger lines thin — reset any accidental override */
+  .nav-actions .hamburger span {
+    width: 16px !important;
+    height: 2px !important;
+  }
 
   /* Grid Layout Adapters */
   .grid-4, .grid-3 {
@@ -117,13 +147,37 @@ html, body {
   .nav {
     min-height: 64px;
   }
+  .brand-mark {
+    width: 32px !important;
+    height: 32px !important;
+  }
   .brand-name {
-    font-size: 1.05rem;
+    font-size: 1rem !important;
+    white-space: nowrap !important;
+  }
+  .brand {
+    gap: 8px;
   }
 
   /* Single Column Grids */
   .grid-4, .grid-3, .grid-2, .dash-cards, .footer-grid, .hero-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  /* Platinum pills: strict 2-column layout on mobile */
+  .platinum-pills {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .platinum-pill {
+    font-size: 0.72rem !important;
+    padding: 8px 10px !important;
+    white-space: nowrap !important;
+    justify-content: center !important;
+    text-align: center !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
   /* Reduced Animations on Mobile for Performance */
@@ -189,15 +243,32 @@ html, body {
     max-width: 100%;
     height: auto;
   }
+  /* General arch-frame: landscape on mobile for cards */
   .arch-frame {
     aspect-ratio: 4 / 3 !important;
-    max-height: 340px !important;
+    max-height: 300px !important;
     overflow: hidden;
+  }
+  /* Hero arch-frame: portrait, full-width, no height cap */
+  .hero-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    padding-bottom: 70px !important;
+  }
+  .hero-visual .arch-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 3 / 4 !important;
+    max-height: none !important;
+    --arch-radius: 60px 60px 8px 8px;
+    border-radius: var(--arch-radius) !important;
   }
   .hero-visual img, .arch-frame img, .hall-card-img img, .gallery-item img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    object-position: center top !important;
     max-height: none !important;
   }
 
@@ -214,6 +285,15 @@ html, body {
   }
   .hero-actions .btn {
     width: 100%;
+  }
+  /* Prevent hero stat labels from wrapping on mobile */
+  .hero-stats {
+    gap: 0 !important;
+    justify-content: space-between !important;
+  }
+  .hero-stats div {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   /* Homepage2 Mobile Top Padding Removal */
