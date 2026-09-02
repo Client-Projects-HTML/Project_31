@@ -152,6 +152,16 @@ HOME 2 DARK MODE & TYPOGRAPHY REFINEMENTS
   color: #F3E7CE !important;
 }
 
+/* --- ARCH BADGE (VIP card on hero image) — fix contrast in dark mode --- */
+[data-theme="dark"] .arch-badge {
+  background: #D4AF37 !important;        /* vivid gold — stays bright in dark mode */
+  color: #1C0A10 !important;             /* deep wine — high contrast on gold */
+}
+[data-theme="dark"] .arch-badge strong,
+[data-theme="dark"] .arch-badge span {
+  color: #1C0A10 !important;             /* override global dark-mode span/strong rules */
+}
+
 [data-theme="dark"] .centered-hero,
 [data-theme="dark"] .auth-wrap {
   background: linear-gradient(135deg, #091510 0%, #0F231A 50%, #08120E 100%) !important;
@@ -336,4 +346,61 @@ HOME 2 DARK MODE & TYPOGRAPHY REFINEMENTS
 }
 [data-theme="dark"] .checkbox-row {
   color: #F3E7CE !important;
+}
+
+/* =========================================================
+   GALLERY PAGE — Dark Mode Contrast Fixes
+   ========================================================= */
+
+/* Filter bar buttons */
+[data-theme="dark"] .filter-bar button {
+  background: #14241C !important;
+  color: #CBB9AC !important;
+  border: 1px solid rgba(212,175,55,.2) !important;
+}
+[data-theme="dark"] .filter-bar button:hover,
+[data-theme="dark"] .filter-bar button.active {
+  background: var(--marigold, #D4AF37) !important;
+  color: #0B1F18 !important;
+  border-color: var(--marigold, #D4AF37) !important;
+}
+
+/* Gallery highlight caption labels (white pill on image) */
+[data-theme="dark"] .gallery-caption-label,
+[data-theme="dark"] .arch-frame [style*="background:rgba(255,255,255"] {
+  background: rgba(20,36,28,0.92) !important;
+  color: var(--marigold-lt, #E8CD82) !important;
+}
+
+/* Video tour section text */
+[data-theme="dark"] .gallery-tour-text p,
+[data-theme="dark"] .gallery-tour-text li {
+  color: #CBB9AC !important;
+}
+
+/* Signature celebrations section */
+[data-theme="dark"] .gallery-section-head p {
+  color: #CBB9AC !important;
+}
+
+/* =========================================================
+   FOOTER CONTACT LIST — Icon layout
+   ========================================================= */
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+}
+.footer-contact-list li:last-child { border-bottom: none; }
+.footer-contact-list li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: .75;
+  color: var(--marigold);
+}
+[data-theme="dark"] .footer-contact-list li svg {
+  color: var(--marigold-lt, #E8CD82) !important;
+  opacity: 1;
 }
